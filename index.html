@@ -1,0 +1,1042 @@
+﻿<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+  <script>
+    var $ = (jQuery = require("jquery"));
+    $(function () {
+      //loading sections
+      $(".loaderPage").load("resources/src/loadingPage.html");
+      $(".loaderTags").load("resources/src/loadingTags.html");
+      $(".homeSection").load("resources/src/sectionHome.html");
+      $(".authSec").load("resources/src/sectionPatron.html");
+      $(".waitFirstItem").load("resources/src/sectionWaitFirstItem.html");
+      $(".nextItems").load("resources/src/sectionNextItems.html");
+      $(".EndLoanSec").load("resources/src/sectionEndLoan.html");
+      $(".changeEmailSec").load("resources/src/sectionChangeEmail.html");
+      $(".accSec").load("resources/src/sectionAccount.html");
+      $(".kbdSec").load("resources/src/sectionKBD.html");
+      $(".retourSec").load("resources/src/sectionReturn.html");
+    });
+
+    var jQuery = ($ = require("jquery"));
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+    html,
+    body,
+    div,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    img,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+  </style>
+</head>
+<script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
+<!-- callAxios -->
+<script type="text/javascript" src="./resources/src/callAPIFactory.js"></script>
+
+<!-- read gloabal params for modele -->
+<script type="text/javascript" src="./resources/src/readModeleParametres.js"></script>
+<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- tagsManger -->
+<script type="text/javascript" src="./resources/src/returnDocumentCalls.js"></script>
+<script type="text/javascript" src="./resources/src/loanDocumentCalls.js"></script>
+<script type="text/javascript" src="./resources/src/cancelDocumentCalls.js"></script>
+<script type="text/javascript" src="./resources/src/patronCalls.js"></script>
+<script type="text/javascript" src="./resources/src/tagsManger.js"></script>
+<script type="text/javascript" src="./resources/src/sendEmail.js"></script>
+<!-- checkQR -->
+<script type="text/javascript" src="./resources/src/callCheckQR.js"></script>
+
+<script type="text/javascript" src="./resources/src/js/jquery.scannerdetection.js"></script>
+
+<body>
+  <div class="loaderPage" style="display: none"></div>
+  <div class="loaderTags" style="display: none"></div>
+  <section class="homeSection" style="display: true"></section>
+  <section class="authSec" style="display: none"></section>
+  <section class="waitFirstItem" style="display: none"></section>
+  <section class="nextItems" style="display: none"></section>
+  <section class="EndLoanSec" style="display: none"></section>
+  <section class="changeEmailSec" style="display: none"></section>
+  <section class="retourSec" style="display: none"></section>
+  <section class="accSec" style="display: none"></section>
+  <section class="kbdSec" style="display: none"></section>
+  <!--  <div aria-live="polite" aria-atomic="true" style="min-height: 200px;">
+    Position it 
+    <div style="position: absolute; top: 0; left: 0;">
+  <div class="toast toastAllNotifay" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+    <div class="toast-body bodyAllNotifay">
+    </div>
+  </div>
+  </div>
+  </div>-->
+
+  <script>
+    const jsonfn = require("./resources/src/jsonAccessFunctions.js");
+    let bigInt = require("big-integer");
+    window.$ = window.jQuery = require("jquery");
+    let app = require("electron").remote.app;
+    const fs = require("fs");
+    const path = require("path");
+    const os = require("os");
+    const remote = require("electron").remote;
+    const ipc = require("electron").ipcRenderer;
+    var socket = io("http://localhost:3000/");
+    const modal = require("electron-modal");
+    const screenFactory = require("./resources/src/screenFactory");
+    const timer = require("./resources/src/timer");
+    const logOperations = require("./resources/src/logOperations");
+    const technologiesFunctions = require("./resources/src/technologiesFunctions.js");
+    const accessPathFactory = require("./resources/src/accessPathFactory");
+
+    require("electron-virtual-keyboard/client")(window, jQuery);
+    var moment = require("moment");
+    require("moment/locale/fr");
+    var md5 = require("md5");
+    var randomstring = require("randomstring");
+    var Base64 = require("js-base64");
+    var QRCode = require("qrcode");
+
+
+    let clickCount = 0;
+    var idleTime = 0;
+    var idleLogTime = 0;
+    var idleReadTagTime = 0;
+    var isReadNextTag = true;
+    var jsonConfig = null;
+    var myTags = null;
+    var timeoutSession = 0;
+    var quitValue = "";
+    var regexRead = "";
+    var regexReplace = "";
+    var codeBarRes = "";
+    var myAccesKey = "";
+    var modele = "";
+    var accessPathKeys = [];
+    var accessPathKeysReverse = [];
+    var sessionid = "";
+    var nom = "";
+    var userMail = "";
+    var infoAdh = "";
+    var idleTime = 0;
+    var logs = [];
+    var infoPatron = "";
+    var scrolled = 0;
+    var scrollSpeed = 100;
+    let login = "";
+    let password = "";
+    let barcodeAdherent = "";
+    let rcr = "";
+    var idAdherent = "";
+    let moduleEPC = require(app.getAppPath() + "/resources/src/decodeEPC.js");
+    // let workerQr = new Worker(
+    //   app.getAppPath() + "/resources/src/getQRCode.js"
+    // );
+    // let workerPret = new Worker(
+    //   app.getAppPath() + "/resources/src/workerPret.js"
+    // );
+    // let workerRetour = new Worker(
+    //   app.getAppPath() + "/resources/src/workerRetour.js"
+    // );
+    // let workerID = new Worker(
+    //   app.getAppPath() + "/resources/src/workerIdentification.js"
+    // );
+    // const Swal = require("sweetalert2");
+    // const { dialog } = require("electron").remote;
+
+    let count;
+    let clicked = false;
+    let checkedAttr = "";
+    let timerWorker;
+    let logged = false;
+    var keepUser = 1;
+    let currentScreen = "_00_HOME_SCREEN";
+    let redirectTo = "_03_WAIT_FIRST_ITEM";
+    var myScreenObject = "";
+    var initialScreenObject = "";
+    var urlPRINT_TICKET = "";
+    var hostname = "";
+    var QRCODEPath = "";
+    var urlQRRequest = "";
+    var delayQRRequest = 1;
+    var checkQRInterval;
+    var urlLeds = "";
+    var loadingTag;
+    var getBufferNEDAPHFtimer;
+    var colors = require('colors');
+    var lastTimeCallApi = Date.now();
+    var triggerTimer = Date.now();
+    var testMode;
+    var reconnectingWebSocket = require('reconnecting-websocket');
+    // Create an array and append your functions to them
+    var srvapiSocket;
+    var funqueue = [];
+    var myCallsTimer;
+    var constructScreen = [];
+
+    //debut ws
+    function getIsSatisfied(myIdExec) {
+      let val = false;
+      funqueue.map(element => {
+        if (element.idExec == myIdExec)
+          val = element.isSatisfied;
+      })
+      return val;
+    }
+    function setIsSatisfied(myIdExec) {
+      let isAllSatisfied = true;
+      funqueue.map(element => {
+        if (element.idExec == myIdExec) element.isSatisfied = true;
+        if (!element.isSatisfied) isAllSatisfied = false;
+      })
+      if (isAllSatisfied) myLoadingTagClearInterval();
+    }
+    const options = {
+      connectionTimeout: 1000,
+      //maxRetries: 50,
+    };
+    srvapiSocket = new reconnectingWebSocket("wss://srvapi2.libnet.online/wss2/", [], options);
+    function srvapiSocketInit() {
+      srvapiSocket.onopen = function (event) {
+        console.log("srvapiSocket onopen");
+        srvapiSocket.send('{ "origine": "autonome", "RCR": ' + rcr + ' }');
+      };
+    }
+    function executeFunctions(funcs) {
+      clearTimeout(myCallsTimer);
+      myCallsTimer = undefined;
+      funqueue.map(element => {
+        if (!element.isSatisfied)
+          element.fn();
+      })
+    }
+    srvapiSocket.onmessage = function (event) {
+      // le trigger  ne doit être interprété que comme une fin de timer ! Et si pas de timer actif, ben il suffit d’ignorer le trigger !
+      console.log(event);
+      console.log(typeof myCallsTimer != "undefined");
+      if (event && event.data && typeof myCallsTimer != "undefined") {
+        let obj = JSON.parse(event.data);
+        if (obj && obj.rcr == rcr && obj.trigger == "checkAnswer") {
+          console.log("srvapiSocket recu checkAnswer");
+          executeFunctions(funqueue);
+        }
+      }
+    }
+    srvapiSocket.onerror = function (error) {
+      console.log("onerror");
+      console.log(error.message);
+    };
+    function myCallsTimerInit() {
+      myCallsTimer = setTimeout(function myCallsTimerFunction() {
+        executeFunctions(funqueue);
+      }, 1000);
+    }//fin ws
+    function updateSessionId() {
+      if (sessionid == "") sessionid = randomstring.generate(16);
+      var dateMD5 = moment(Date.now()).format("YYYYMMDD");
+      QRCODEPath =
+        "https://app.libnet.online/moncompte/?" +
+        md5(dateMD5).slice(1, 6) +
+        "=" +
+        Base64.encode(barcodeAdherent) +
+        "&r=" +
+        Base64.encode(rcr) +
+        "&sessionid=" +
+        sessionid;
+      var canvas06 = $("#QRCODE_VALUE").get(0);
+      var canvas09 = $("#_09_PATRON_INFO #IMAGE_QR").get(0);
+      QRCode.toCanvas(canvas06, QRCODEPath, function (error) { });
+      QRCode.toCanvas(canvas09, QRCODEPath, function (error) { });
+    }
+
+    //traitement pour loading tag
+    function myLoadingTagClearInterval() {
+      isReadNextTag = true;
+      $(".loaderTags").hide();
+      clearInterval(loadingTag);
+    }
+
+    function myLoadingTagSetInterval() {
+      idleReadTagTime = 0;
+      isReadNextTag = false;
+      $(".loaderTags").show();
+      loadingTag = setInterval(function () {
+        if (!isReadNextTag && idleReadTagTime < 300) idleReadTagTime = idleReadTagTime + 1;
+        if (isReadNextTag || (!isReadNextTag && idleReadTagTime >= 300))
+          myLoadingTagClearInterval();
+      }, 100);
+    }
+    /* show tag loader*/
+    function showInProgress() {
+      myLoadingTagSetInterval();
+    }
+    function testQuitValue(valueToTest) {
+      if (valueToTest == quitValue) app.quit(); //remote.getCurrentWindow().close();
+    }
+    $(document).scannerDetection({
+      timeBeforeScanTest: 200, // wait for the next character for upto 200ms
+      avgTimeByChar: 100, // it's not a barcode if a character takes longer than 100ms
+      onComplete: function (barcode, qty) {
+        console.log("barcode read".yellow);
+        idleTime = 0;
+        showInProgress();
+        $("#pTest").text(barcode);
+        testQuitValue(barcode);
+        barcode = barcode.match(regexRead)[0];
+        barcode = barcode.replace(regexReplace, "");
+        $("#pTest").html("");
+
+        if (currentScreen == "_01_GET_PATRON")
+          patronCalls(barcode);
+        else if (currentScreen == "_00_HOME_SCREEN") {
+          var isLoanDirect = jsonfn.fns.jsonValuesAccess(
+            ["_00_HOME_SCREEN", "LOAN_DIRECT"], myScreenObject) * 1;
+          if (isLoanDirect) patronCalls(barcode);
+        }
+        else if (currentScreen == "_04_NEXT_ITEMS") {
+          var acceptNewpatron = jsonfn.fns.jsonValuesAccess(
+            ["_04_NEXT_ITEMS", "ACCEPT_NEWPATRON"], myScreenObject);
+          if (acceptNewpatron)
+            if (confirm("NOUVEL UTILISATEUR CONNECTE") == true)
+              patronCalls(barcode);
+        }
+      }, // main callback function
+    });
+
+    /*fonction show une section et hide les autres et fait un appel al fonction  screenFactory.myScreen pour construire l'écran*/
+    function showSection(myCurrentScreen, sectionToShow) {
+      lastScreen = currentScreen;
+      currentScreen = myCurrentScreen;
+      idleTime = 0;
+      $(".loaderPage").show().delay(100).hide(50);
+      $("section").hide();
+      screenFactory.myScreen(myCurrentScreen);
+      $(sectionToShow).show();
+      //     $(".loader").fadeOut(500);
+      //case 02, to show 01 in the background
+      //  $('#'+currentScreen+' .toast').css({ display: 'none' });
+
+      if (currentScreen == "_02_CLAVIER_USAGER") $(".authSec").show(500);
+      else $("#modal-content,#modal-background").removeClass("active");
+      if (currentScreen == "_01_GET_PATRON")
+        checkQRInit();
+      else
+        clearInterval(checkQRInterval);
+    }
+    function showAlertWithMessageServer(mySelector, msgServer = "") {
+      $(mySelector + " .messageServer")
+        .empty(msgServer)
+        .prepend(msgServer)
+      $(mySelector).toast("show");
+    }
+    function showAlert(mySelector) {
+      $(mySelector).toast({ delay: 99999 });
+      $(mySelector).toast("show");
+      console.log("showAlert");
+      //  showAlertWithMessageServer("applicationAlert", mySelector);
+    }
+    function reinitializeData() {
+      $(".DISPLAY_DECONNEXION").attr("hidden", "hidden");
+      $(".PATRON_NAME").text("");
+      $(".DISP_PATRON_NAME").text("");
+      $("._09_DISP_DOC_HOME").text("");
+      $("._09_DISP_DOC_HOLD").text("");
+      $(".DISP_DOC_HOME").text("");
+      $(".DISP_DOC_LATE").text("");
+      $(".DISP_DOC_AVAILABLE").text("");
+      $(".DISP_DOC_HOLD").text("");
+      if (idAdherent != "") {
+        logOperations.addEvent("TIMEOUT|" + currentScreen);
+        console.log('userconectes');
+      }
+      nom = "";
+      idAdherent = "";
+      sessionid = "";
+      infoAdh = "";
+      userMail = "";
+      funqueue = [];
+      sessionid = "";
+      $(".PATRON_NAME").text("");
+      $("#pretsTable tbody tr").remove();
+      $("#_04_NEXT_ITEMS tbody tr").remove();
+      $("#pretsTable tbody tr").remove();
+      $(".toastAllNotifay .bodyAllNotifay .toast-body").remove();
+      $(".toast").toast("hide");
+      $("#_07_CHANGE_EMAIL #EMAIL_INPUT").val("");
+      var scrolled = 0;
+      //force new qr  code
+      callAxios("post", urlQRRequest, {
+        FORCENEW: "true",
+        rcr: jsonConfig["RCR"],
+        localisation: jsonConfig["HOSTNAME"],
+      });
+    }
+    socket.on("message", (data) => {
+      idleTime = 0;
+      if (typeof data != "undefined" && isReadNextTag) {
+        console.log("tags read socket".yellow);
+        var myTags = data[0].tags;
+        testQuitValue(myTags[0].identifiant);
+        showInProgress();
+        tagsManger(myTags)
+      }
+    })
+    $(document).ready(function () {
+      fs.readFile(
+        app.getAppPath() + "/resources/config/config.json",
+        "utf-8",
+        (err, data) => {
+          if (err) {
+            alert("An error ocurred reading the file :" + err.message);
+            return;
+          }
+          jsonConfig = JSON.parse(data);
+          rcr = jsonConfig["RCR"];
+          login = jsonConfig["LOGIN_GETDATA"];
+          password = jsonConfig["PASSWD_GETDATA"];
+          myAccesKey = jsonConfig["MODELE"];
+          hostname = jsonConfig["NAME"];
+          //modele = jsonConfig["MODELE"];
+          //accessPathKeys = [modele];
+          modele = jsonConfig["MODELE"].split(".")[0] + ".";
+          initialScreenObject = jsonConfig.CONFIG.JSON[modele];
+          accessPathFactory.createAccessPath();
+          // myScreenObject = jsonConfig.CONFIG.JSON[modele];
+          readModeleParametres();
+          logOperations.addEvent("START|NO_VERSION_PGM");
+          urlPRINT_TICKET = jsonConfig.DEVICES["PRINT_TICKET"]["URL"];
+          urlLeds = jsonConfig.DEVICES["BANDEAU_LED"]["URL"];
+          $("#exit").change(function () {
+            if ($(this).val() === "exit") {
+              remote.getCurrentWindow().close();
+            }
+            $(this).val("");
+          });
+          //fonction retour à la page précédante
+          $(".DISPLAY_RETURN_HOME, .DISP_RETURN").click(function () {
+            //   remote.getCurrentWindow().close();
+
+            logOperations.addEvent("BTN|RETURN_HOME");
+            //si test mode true redemarre l app
+            if (testMode) ipc.sendSync("relaunch-app");
+            if (currentScreen == "_02_CLAVIER_USAGER") {
+              showSection("_01_GET_PATRON", ".authSec");
+              $("#modal-content,#modal-background").removeClass("active");
+            } else {
+              if (currentScreen == "_08_RETURN_DOC"
+                && idAdherent == "") {
+                reinitializeData();
+                showSection("_00_HOME_SCREEN", ".homeSection");
+              }
+              else if (idAdherent != "" && keepUser) {
+                showSection("_00_HOME_SCREEN", ".homeSection");
+                $(".PATRON_NAME").text(nom);
+                $(".DISPLAY_DECONNEXION").removeAttr("hidden");
+              }
+              else {
+                showSection("_00_HOME_SCREEN", ".homeSection");
+                reinitializeData();
+              }
+            }
+          });
+
+          $("#DISPLAY_DECONNEXION").click(function () {
+            logOperations.addEvent("BTN|DECONNEXION");
+            showAlert(".00_toastLogout");
+            reinitializeData();
+          });
+
+          $("#_02_CLAVIER_USAGER #IDENTIFIANT_TEXT").keyup(function () {
+            testQuitValue($("#_02_CLAVIER_USAGER #IDENTIFIANT_TEXT").val());
+          });
+
+          $("#VALIDER_TEXT").click(function () {
+            logOperations.addEvent("BTN|VALIDER_TEXT");
+            showInProgress();
+            var strBarcode = $("#_02_CLAVIER_USAGER #IDENTIFIANT_TEXT").val();
+            $("#_02_CLAVIER_USAGER #IDENTIFIANT_TEXT").val("");
+            patronCalls(strBarcode);
+          });
+          var HELPME_SERVICE = jsonConfig.CONFIG.JSON[modele].HELPME_SERVICE;
+
+          $(".DISPLAY_PATRON_INFO").click(function (e) {
+            logOperations.addEvent("BTN|PATRON_INFO");
+            updateSessionId();
+            if (idAdherent != "") {
+              showInProgress();
+              redirectTo == "_09_PATRON_INFO";
+              patronCalls(barcodeAdherent);
+              //    showSection("_09_PATRON_INFO", ".accSec");
+            } else {
+              redirectTo = "_09_PATRON_INFO";
+              showSection("_01_GET_PATRON", ".authSec");
+            }
+          });
+          /* _03_WAIT_FIRST_ITEM */
+          $(".DISP_PATRON_INFO_MENU").click(function (e) {
+            logOperations.addEvent("BTN|DISP_PATRON_INFO_MENU");
+            updateSessionId();
+            // showSection("_09_PATRON_INFO", ".accSec");
+            showInProgress();
+            redirectTo = "_09_PATRON_INFO";
+            patronCalls(barcodeAdherent);
+          });
+          /* _08_RETURN_DOC */
+          /* start _06_END_LOAN_SELECT_MODE */
+          $(".MAIL_OPTION_TEXT").click(function (e) {
+            logOperations.addEvent("BTN|MAIL_OPTION_TEXT");
+            showInProgress();
+            sendEmail(userMail);
+            showSection("_00_HOME_SCREEN", ".homeSection");
+            reinitializeData();
+          });
+          $("#_06_END_LOAN_SELECT_MODE #END_LABEL").click(function (e) {
+            logOperations.addEvent("BTN|END_LABEL");
+            showSection("_00_HOME_SCREEN", ".homeSection");
+            reinitializeData();
+          });
+          /* end _06_END_LOAN_SELECT_MODE */
+          /* start _07_CHANGE_EMAIL */
+          $("#_07_CHANGE_EMAIL #EMAIL_INPUT").keyup(function () {
+            if ($("#_07_CHANGE_EMAIL #EMAIL_INPUT").val().length == 0) {
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").removeClass().addClass("EMAIL_EMPTY");
+              $("#_07_CHANGE_EMAIL #SEND").removeClass().addClass("SEND_EMPRY");
+            }
+            else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").val())) {
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").removeClass().addClass("EMAIL_OK");
+              $("#_07_CHANGE_EMAIL #SEND").removeClass().addClass("SEND_READY");
+            }
+            else {
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").removeClass().addClass("EMAIL_ERROR");
+              $("#_07_CHANGE_EMAIL #SEND").removeClass().addClass("SEND_ERROR");
+            }
+          });
+          $(".CHANGE_EMAIL_ADDR").click(function (e) {
+            logOperations.addEvent("BTN|EMAIL_ADDR");
+            showSection("_07_CHANGE_EMAIL", ".changeEmailSec");
+            if (userMail == "") {
+              var emptyMail = jsonfn.fns.jsonValuesAccess(
+                ["_07_CHANGE_EMAIL", "EMPTY_EMAIL_TEXT"], myScreenObject);
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").val(emptyMail);
+            }
+            else
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").val(userMail);
+            $("#_07_CHANGE_EMAIL #EMAIL_INPUT").keyup();
+
+            var kbd = jsonfn.fns.jsonValuesAccess(
+              ["_07_CHANGE_EMAIL", "EMAIL_KBD"], myScreenObject);
+            kbd = kbd.replace(/CLEAR/g, "{backspace:*}").replace(/clear/g, "{backspace:*}")
+              .replace(/EFFACER/g, "{backspace:*}").replace(/effacer/g, "{backspace:*}")
+              .replace(/SPACE/g, "{space}").replace(/SPACE/g, "{space:*}");
+
+            kbd = JSON.parse(kbd);
+            $(".kb-container").empty();
+            $("#_07_CHANGE_EMAIL #EMAIL_INPUT").keyboard({
+              layout: {
+                normal: kbd,
+              },
+              individual: true,
+              show: true,
+              displayOnFocus: false,
+              autoPosition: false,
+              container: function ($el) {
+                return $("#_07_CHANGE_EMAIL").find(".kb-container");
+              },
+            });
+            setTimeout(() => {
+              $("#_07_CHANGE_EMAIL #EMAIL_INPUT").focus();
+            }, 500);
+            $("#_07_CHANGE_EMAIL .virtual-keyboard").addClass(
+              "_07_virtual-keyboard"
+            );
+            $("#_07_CHANGE_EMAIL .key").addClass("_07_key");
+            $("#_07_CHANGE_EMAIL .kb-row").addClass("_07_kb-row");
+            $("#_07_CHANGE_EMAIL .layout").addClass("_07_layout");
+            $("#_07_CHANGE_EMAIL .layout").addClass("_07_layout");
+            $("#_07_CHANGE_EMAIL .kb-column").addClass("_07_kb-column");
+          });
+          $("#_07_CHANGE_EMAIL #SEND").click(function (e) {
+            logOperations.addEvent("BTN|SEND_CHANGE_MAIL");
+            showInProgress();
+            let userMailInput = $("#_07_CHANGE_EMAIL #EMAIL_INPUT").val();
+            sendEmail(userMailInput);
+            showSection("_00_HOME_SCREEN", ".homeSection");
+            reinitializeData();
+          });
+          /* end _06_END_LOAN_SELECT_MODE */
+
+          $(".DISPLAY_LOAN").click(function (e) {
+            logOperations.addEvent("BTN|DISPLAY_LOAN");
+            updateSessionId();
+            if (idAdherent != "") {
+              showSection("_03_WAIT_FIRST_ITEM", ".waitFirstItem");
+            } else {
+              redirectTo = "_03_WAIT_FIRST_ITEM";
+              showSection("_01_GET_PATRON", ".authSec");
+            }
+          });
+
+          /* _08_RETURN_DOC */
+          $(".DISPLAY_RETURN").click(function (e) {
+            logOperations.addEvent("BTN|DISPLAY_RETURN");
+            updateSessionId();
+            showSection("_08_RETURN_DOC", ".retourSec");
+          });
+          $("#_08_RETURN_DOC #END_LABEL").click(function (e) {
+            logOperations.addEvent("BTN|END_LABEL");
+            if (currentScreen == "_08_RETURN_DOC") {
+              let displayPrintOption = jsonfn.fns.jsonValuesAccess(
+                ["_08_RETURN_DOC", "DISPLAY_PRINT_OPTION"], myScreenObject) * 1;
+              if (displayPrintOption) showSection("_06_END_LOAN_SELECT_MODE", ".EndLoanSec");
+              else {
+                showSection("_00_HOME_SCREEN", ".homeSection");
+                if (idAdherent == "") reinitializeData();
+              }
+            }
+            else showSection("_06_END_LOAN_SELECT_MODE", ".EndLoanSec");
+
+          });
+          /* _08_RETURN_DOC */
+          /* _09_PATRON_INFO */
+
+
+          /* _09_PATRON_INFO */
+          $("#_09_PATRON_INFO #DISPLAY_GO_LOAN").click(function (e) {
+            logOperations.addEvent("BTN|DISPLAY_GO_LOAN");
+            showSection("_04_NEXT_ITEMS", ".nextItems");
+          });
+          /* _04_NEXT_ITEMS */
+
+          $("#_04_NEXT_ITEMS #END_LABEL").click(function (e) {
+            logOperations.addEvent("BTN|END_LABEL");
+            showSection("_06_END_LOAN_SELECT_MODE", ".EndLoanSec");
+          });
+          /* _04_NEXT_ITEMS */
+
+          $("#DISPLAY_KBD").click(function (e) {
+            $("#_02_CLAVIER_USAGER .IDENTIFIANT_TEXT").focus();
+            logOperations.addEvent("BTN|DISPLAY_KBD");
+            showSection("_02_CLAVIER_USAGER", ".kbdSec");
+            var kbd = jsonfn.fns.jsonValuesAccess(
+              ["_02_CLAVIER_USAGER", "KBD_TYPE"],
+              myScreenObject
+            );
+            kbd = kbd
+              .replace(/CLEAR/g, "{backspace:*}")
+              .replace(/clear/g, "{backspace:*}")
+              .replace(/EFFACER/g, "{backspace:*}")
+              .replace(/effacer/g, "{backspace:*}");
+
+            kbd = JSON.parse(kbd);
+            $(".kb-container").empty();
+            $("#_02_CLAVIER_USAGER .IDENTIFIANT_TEXT").keyboard({
+              layout: {
+                normal: kbd,
+              },
+              individual: true,
+              show: true,
+              displayOnFocus: false,
+              autoPosition: false,
+              container: function ($el) {
+                return $el.parent().find(".kb-container");
+              },
+            });
+            $("#_02_CLAVIER_USAGER .IDENTIFIANT_TEXT").focus();
+            $("#modal-content,#modal-background").toggleClass("active");
+            $("#_02_CLAVIER_USAGER .key").addClass("_02_key");
+            $("#_02_CLAVIER_USAGER .kb-row").addClass("_02_kb-row");
+            $("#_02_CLAVIER_USAGER .layout").addClass("_02_layout");
+            $("#_02_CLAVIER_USAGER .layout").addClass("_02_layout");
+            $("#_02_CLAVIER_USAGER .kb-column").addClass("_02_kb-column");
+          });
+
+          $(".HELPME_TEXT").append(
+            "<p>" + HELPME_SERVICE["LABEL_BT_HELP"]["VALUE"] + "</p>"
+          );
+
+          $(".DISP_HELPME").click(function (e) {
+            logOperations.addEvent("BTN|DISP_HELPME");
+            if (clickCount === 0) {
+              clickCount++;
+              $(".HELPME_TEXT")
+                .find("p")
+                .text(HELPME_SERVICE["HELPME_TEXT_PENDING"]["VALUE"]);
+              callAxios("GET", HELPME_SERVICE["URL_CALL"]["VALUE"], {});
+              let timeout = HELPME_SERVICE["WAITING_TIME"]["VALUE"] * 1000;
+              if (timeout > 0) {
+                setTimeout(() => {
+                  //call cancel
+                  if (clickCount != 0) {
+                    $(".HELPME_TEXT")
+                      .find("p")
+                      .text(HELPME_SERVICE["LABEL_BT_HELP"]["VALUE"]);
+                    callAxios(
+                      "GET",
+                      HELPME_SERVICE["URL_CANCEL"]["VALUE"],
+                      {}
+                    );
+                  }
+                }, timeout);
+              }
+            } else {
+              clickCount = 0;
+              $(".HELPME_TEXT")
+                .find("p")
+                .text(HELPME_SERVICE["LABEL_BT_HELP"]["VALUE"]);
+              callAxios("GET", HELPME_SERVICE["URL_CANCEL"]["VALUE"], {});
+            }
+          });
+          //06 PRINT_TICKET
+          function appendPrintTicket(newLine, lineTermeArray, barcode, title, returndate) {
+            var lastPosition = 0;
+            var fieldMaxLength = 0;
+            lineTermeArray.map((lineTerme, index) => {
+              var lineTermeLenght = lineTerme.match(/[0-9]+/g);
+
+              fieldMaxLength = Number(lineTermeLenght[0]);
+              lastPosition += fieldMaxLength;
+              //lineTerme ={barcode_16L}
+              if (lineTerme.includes("barcode")) {
+                {
+                  if (barcode.length == fieldMaxLength) newLine += barcode;
+                  else if (barcode.length > fieldMaxLength) {
+                    newLine += barcode.slice(0, fieldMaxLength);
+                  }
+                  else {
+                    if (lineTerme[lineTerme.length - 2] == "L") {
+                      newLine += barcode;
+                      while (newLine.length < lastPosition) {
+                        newLine += " ";
+                      }
+                    }
+                    else if (lineTerme[lineTerme.length - 2] == "R") {
+                      while (newLine.length < lastPosition - barcode.length) {
+                        newLine += " ";
+                      }
+                      newLine += barcode;
+                    }
+                    else if (lineTerme[lineTerme.length - 2] == "C") {
+                      var dif = fieldMaxLength - barcode.length
+                      while (newLine.length < lastPosition - barcode.length - dif / 2) {
+                        newLine += " ";
+                      }
+                      newLine += barcode;
+                      while (newLine.length < lastPosition) {
+                        newLine += " ";
+                      }
+                    }
+                  }
+                }
+              }
+              else if (lineTerme.includes("title")) {
+                if (title.length == fieldMaxLength) newLine += title;
+                else if (title.length > fieldMaxLength) {
+                  newLine += title.slice(0, fieldMaxLength);
+                }
+                else {
+                  if (lineTerme[lineTerme.length - 2] == "L") {
+                    newLine += title;
+                    while (newLine.length < lastPosition) {
+                      newLine += " ";
+                    }
+                  }
+                  else if (lineTerme[lineTerme.length - 2] == "R") {
+                    while (newLine.length < lastPosition - title.length) {
+                      newLine += " ";
+                    }
+                    newLine += title;
+                  }
+                  else if (lineTerme[lineTerme.length - 2] == "C") {
+                    var dif = fieldMaxLength - title.length;
+                    while (newLine.length < lastPosition - title.length - (dif / 2)) {
+                      newLine += " ";
+                    }
+                    newLine += title;
+                    while (newLine.length < lastPosition) {
+                      newLine += " ";
+                    }
+                  }
+                }
+              }
+              else if (lineTerme.includes("returndate")) {
+                if (returndate.length == fieldMaxLength) newLine += returndate;
+                else if (returndate.length > fieldMaxLength) {
+                  newLine += returndate.slice(0, fieldMaxLength);
+                }
+                else {
+                  if (lineTerme[lineTerme.length - 2] == "L") {
+                    newLine += returndate;
+                    while (newLine.length < lastPosition) {
+                      newLine += " ";
+                    }
+                  }
+                  else if (lineTerme[lineTerme.length - 2] == "R") {
+                    while (newLine.length < lastPosition - returndate.length) {
+                      newLine += " ";
+                    }
+                    newLine += returndate;
+                  }
+                  else if (lineTerme[lineTerme.length - 2] == "C") {
+                    var dif = fieldMaxLength - returndate.length;
+                    while (newLine.length < lastPosition - returndate.length - (dif / 2)) {
+                      newLine += " ";
+                    }
+                    newLine += returndate;
+                    while (newLine.length < lastPosition) {
+                      newLine += " ";
+                    }
+                  }
+                }
+              }
+            });
+            return newLine;
+          }
+          $(".DISPLAY_PRINT_OPTION").click(function (e) {
+            console.log("Print ticket".blue);
+            logOperations.addEvent("BTN|PRINT_OPTION");
+            var urlPRINT_TICKET = jsonConfig.DEVICES["PRINT_TICKET"]["URL"];
+            var listLoansGroup = "";
+            var listReturnsGroup = "";
+
+            if ($("#_08_RETURN_DOC #pretsTable tbody tr.ACCEPTED_ITEM").length > 0) {
+              //si il y a des éléments dans 08
+              //lire la valeur return_title , on utilise fonction jsonValuesAccess
+              var returnTitle = jsonfn.fns.jsonValuesAccess(
+                ["PRINT_TICKET", "RETURN_TITLE"], myScreenObject);
+              var lineTerme = jsonfn.fns.jsonValuesAccess(
+                ["PRINT_TICKET", "RETURN_LINE"], myScreenObject);
+              //var fieldLenghts = lineTerme.match(/[0-9]+/g);
+              //sum length "{barcode_16L}{title_30L}"=>16+30
+              listReturnsGroup = returnTitle + "\n";
+              var lineTermeArray = lineTerme.match(/\{(.*?)\}+/g)
+              var newLine = "";
+
+              $("#_08_RETURN_DOC #pretsTable tbody tr.ACCEPTED_ITEM").each(
+                function (index) {
+                  var barcode = $(this).find("._08_identifiant").text();
+                  var title = $(this).find("._08_titre").text();
+                  listReturnsGroup += appendPrintTicket(newLine, lineTermeArray, barcode, title) + "\n";
+                }
+              );
+            }
+            console.log(listReturnsGroup);
+            if ($("#_04_NEXT_ITEMS #nextItemTable tbody tr.ACCEPTED_ITEM").length > 0) {
+              //si il y a des éléments dans 0
+              //lire la valeur loan_title , on utilise fonction jsonValuesAccess
+              var loanTitle = jsonfn.fns.jsonValuesAccess(
+                ["PRINT_TICKET", "LOAN_TITLE"], myScreenObject);
+              var lineTerme = jsonfn.fns.jsonValuesAccess(
+                ["PRINT_TICKET", "LOAN_LINE"], myScreenObject);
+              //var fieldLenghts = lineTerme.match(/[0-9]+/g);
+              //sum length "{barcode_16L}{title_30L}"=>16+30
+              listLoansGroup = loanTitle + "\n";
+              var lineTermeArray = lineTerme.match(/\{(.*?)\}+/g)
+              var newLine = "";
+
+              $("#_04_NEXT_ITEMS #nextItemTable tbody tr.ACCEPTED_ITEM").each(function (index) {
+                var barcode = $(this).find("._04_identifiant").text();
+                var title = $(this).find("._04_titre").text();
+                var retournDate = $(this).find("._04_RetournDate").text();
+                listLoansGroup += appendPrintTicket(newLine, lineTermeArray, barcode, title, retournDate) + "\n";
+              });
+            }
+            console.log("listReturnsGroup", listReturnsGroup);
+
+            console.log("listLoansGroup", listLoansGroup);
+            console.log("Print ticket call post /PrintTicket".magenta);
+
+            callAxios("post", urlPRINT_TICKET + "/PrintTicket", {
+              name_user: nom,
+              barcode_user: barcodeAdherent,
+              Info_Adh: infoAdh,
+              list_loans_group: listLoansGroup,
+              list_returns_group: listReturnsGroup,
+              station_name: hostname,
+              qrcode: QRCODEPath,
+              now: moment(Date.now()).format("DD MMMM YYYY,HH:MM"),
+            }).then(function (response) {
+              console.log("Récéption réponse PrintTicket".magenta, response);
+
+            })
+              .catch(function (error) {
+                console.log("error /PrintTicket call".red, error);
+              });
+
+            showSection("_00_HOME_SCREEN", ".homeSection");
+            reinitializeData();
+          });
+
+          $(document).on("click", function (evt) {
+            idleTime = 0;
+            //refresh session
+          });
+          //timer for session time out
+          setInterval(function () {
+            idleTime = idleTime + 1;
+            idleLogTime = idleLogTime + 1;
+            if (timeoutSession != 0 && idleTime > timeoutSession && keepUser == 0) {
+              idleTime = 0;
+              if (sessionid != "") {
+                reinitializeData();
+                showSection("_00_HOME_SCREEN", ".homeSection");
+              }
+            }
+          }, 1000);
+          srvapiSocketInit();
+          technologiesFunctions.onStart();
+          $(".loaderPage").show().delay(200).hide(50);
+          screenFactory.myScreen();
+          //call init in json js modele
+          init();
+
+
+          function repeatingfunctionDown() {
+            console.log("repeatingfunctionDown");
+            var scrolled = $("#" + currentScreen + " .tbody").get(0)
+              .scrollTop;
+            var finalscrolled =
+              scrolled + $("#" + currentScreen + " .tbody").height();
+            // var stopScrolling =
+            //   $(".myTableContainer").get(0).scrollHeight - finalscrolled;
+            if (
+              finalscrolled <
+              $("#" + currentScreen + " .tbody").get(0).scrollHeight &&
+              $("#" + currentScreen + " .tbody").get(0).scrollHeight >
+              $("#" + currentScreen + " .tbody").height()
+            ) {
+              scrolled = scrolled + 20;
+              $("#" + currentScreen + " .tbody").animate(
+                {
+                  scrollTop: scrolled,
+                },
+                scrollSpeed
+              );
+            }
+          }
+          var int00; // declared here to make it visible to clearInterval.
+          $(".DISP_DOWN")
+            .mousedown(function () {
+              console.log("DISP_DOWN");
+              int00 = setInterval(function () {
+                console.log("DISP_DOWNs");
+                repeatingfunctionDown();
+              }, scrollSpeed);
+            })
+            .mouseup(function () {
+              console.log("clearInterval");
+
+              clearInterval(int00);
+            });
+
+          function repeatingfunctionUp() {
+            console.log("repeatingfunctionUp");
+            var scrolled = $("#" + currentScreen + " .tbody").get(0)
+              .scrollTop;
+            var finalscrolled = scrolled - 20;
+            if (
+              finalscrolled > 0 &&
+              $("#" + currentScreen + " .tbody").get(0).scrollHeight >
+              $("#" + currentScreen + " .tbody").height()
+            ) {
+              scrolled = scrolled - 20;
+              $("#" + currentScreen + " .tbody").animate(
+                {
+                  scrollTop: scrolled,
+                },
+                scrollSpeed
+              );
+            } else if (
+              finalscrolled <= 0 &&
+              scrolled > 0 &&
+              $("#" + currentScreen + " .tbody").get(0).scrollHeight >
+              $("#" + currentScreen + " .tbody").height()
+            ) {
+              scrolled = 0;
+              $("#" + currentScreen + " .tbody").animate(
+                {
+                  scrollTop: scrolled,
+                },
+                scrollSpeed
+              );
+            }
+          }
+          var int01; // declared here to make it visible to clearInterval.
+          $(".DISP_UP")
+            .mousedown(function () {
+              console.log("DISP_UP");
+
+              int01 = setInterval(function () {
+                repeatingfunctionUp();
+              }, scrollSpeed);
+            })
+            .mouseup(function () {
+              clearInterval(int01);
+            });
+
+
+          $(".clearValue").on("click", function () {
+            scrolled = 0;
+          });
+          $(" .DISP_REFUSED_ITEM_CLOSE , .DISP_ACCEPTED_ITEM_CLOSE").on("click", function () {
+            $(".toast").toast('hide');
+          });
+
+
+          let selectors = [];
+          selectors["backgroundImg"] = document.getElementById(
+            "_00_HOME_backgroundImg"
+          );
+          selectors["loadText"] = document.getElementById(
+            "_OO_HOME_loanText"
+          );
+          selectors["returnText"] = document.getElementById(
+            "_OO_HOME_returnText"
+          );
+          selectors["accText"] = document.getElementById("_OO_HOME_accText");
+
+          //selectors.push($('#'))
+        }
+      );
+    });
+  </script>
+</body>
+
+</html>

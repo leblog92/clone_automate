@@ -1,0 +1,545 @@
+<html>
+
+<head>
+
+    <style>
+        html,
+        body,
+        div,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        img,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /*
+        ============ START GLOBAL DIV ============
+        */
+        ._00_HOME_section {
+            position: relative;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+
+            /**
+            * ! font-weight here applicates to the whole page.
+            * ! which is not recommanded.
+            * ! remove later to customize with accuracy if needed 
+            */
+        }
+
+        ._00_HOME_section>.backgroundImg {
+            height: 100%;
+            background-image: url('./resources/img/background.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /*
+        ============ END GLOBAL DIV ============
+        */
+        /*
+        ============ START DIV HEADER ============
+        */
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER {
+            margin-top: 10px;
+            width: 100%;
+            height: 33%;
+            position: absolute;
+            background-image: url(./resources/img/upperBg.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER>#logos {
+            vertical-align: bottom;
+            margin-top: 60px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER>#logos>#DISPLAY_NEDAP_LOGO {
+            margin-left: 150px;
+            height: 15%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER>#logos>#DISPLAY_CUSTOMER_LOGO {
+            float: right;
+            margin-right: 200px;
+            height: 15%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER>.PRIMARY_INFO>#WELCOME_TEXT {
+            font-size: 2em;
+            margin-left: 29%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#DISPLAY_HEADER>.PRIMARY_INFO>#PRIMARY_INFO_TEXT {
+            width: 100%;
+            float: top;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+        }
+
+        /*
+        ============ END DIV HEADER ============
+        */
+        /*
+        ============ START DIV SECONDARY INFO ============
+        */
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP {
+            width: 100%;
+            float: bottom;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin-top: 300px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP {
+            width: 26%;
+            float: left;
+            height: 75%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY {
+            width: 78%;
+            float: top;
+            height: 100%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPLAY_SECONDARY_INFO {
+            width: 80%;
+            float: top;
+            height: 70%;
+            background-image: url(./resources/img/leftBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            margin-left: 10%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPLAY_SECONDARY_INFO>#SECONDARY_INFO_TITLE {
+            font-weight: bold;
+            line-height: 50px;
+            padding-top: 5%;
+            font-size: xx-large;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPLAY_SECONDARY_INFO>#SECONDARY_INFO_TEXT {
+            margin-left: 5%;
+            margin-right: 5%;
+            align-items: center;
+            padding-top: 15%;
+            font-size: large;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPL_HELPME {
+            width: 45%;
+            float: bottom;
+            margin: auto;
+            height: 30%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPL_HELPME>#HELPME_TEXT {
+            width: 100%;
+            height: 100%;
+            background-image: url(./resources/img/infoBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            text-align: center;
+            font-size: larger;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            margin-top: 20%;
+            padding-right: 3%;
+            margin-left: -242px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPL_PREVIOUS {
+            width: 34%;
+            height: 28%;
+            background-image: url(./resources/img/postit\ retour.png);
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-size: larger;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            margin-top: 20%;
+            padding-right: 3%;
+            margin: -141px 243px;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#CONTAINER_SECONDARY_HELP>#CONTAINER_SECONDARY>#DISPL_PREVIOUS>#DISPL_PREVIOUS_TEXT {
+            padding-top: 10%;
+        }
+
+        /*
+        ============ END DIV SECONDARY INFO ============
+        */
+        /* 
+        ============ START DIV ACTIONS =================
+        */
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER {
+            width: 64%;
+            float: right;
+            height: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS {
+            width: 90%;
+            height: 90%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS {
+            width: 85%;
+            float: top;
+            height: 65%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_SMARTPHONE {
+            width: 21%;
+            float: top;
+            height: 100%;
+            margin-top: 5%;
+            background-image: url(resources/img/smartphone.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_SMARTPHONE>#LABEL_BT_SMARTPHONE {
+            width: 75%;
+            font-weight: bold;
+            font-size: 38px;
+            margin: 27px;
+            margin-right: 76px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_SMARTPHONE>#BT_SMARTPHONE_TEXT {
+            /* max-width: 200px;
+            width: 85%;
+            height: 85%;
+            text-align: center; */
+            font-weight: bold;
+            font-size: x-large;
+            margin: -37px;
+            /* margin-left: -1px; */
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_CARNET {
+            /* width: 30%;
+            float: top; */
+            height: 138%;
+            background-image: url(resources/img/carnet.png);
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            display: flex;
+            margin-top: -10%;
+            justify-content: center;
+            flex-direction: column;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_CARNET>#LABEL_BT_CARNET {
+            width: 85%;
+            font-weight: bold;
+            margin: 30px;
+            font-size: 38px;
+            padding-bottom: -8px;
+            margin-left: 29px;
+            margin-top: 0px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_CARNET>#CARNET_BTN_TEXT {
+            /* max-width: 200px; */
+            width: 85%;
+            height: 85%;
+            text-align: center;
+            font-weight: bold;
+            font-size: x-large;
+            margin: -39px;
+            margin-left: 21px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_AIDEINTERACTIF_INFO {
+            width: 41%;
+            /* float: top; */
+            height: 79%;
+            background-image: url(resources/img/Aide_Interactive.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            margin-top: 11%;
+            font-size: x-large;
+            flex-direction: column;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_AIDEINTERACTIF_INFO>#LABEL_BT_AIDEINTERACTIF {
+            font-weight: bold;
+            font-size: 38px;
+            margin: 27px;
+            margin-left: 32px;
+            width: 85%;
+            color: white;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS>#DISPLAY_AIDEINTERACTIF_INFO>#LABEL_BT_AIDEINTERACTIF_TEXT {
+            height: 85%;
+            text-align: center;
+            font-weight: bold;
+            font-size: x-large;
+            margin: -37px;
+            margin-left: -47px;
+            color: white;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#BOTTOM_BG {
+            width: 100%;
+            float: bottom;
+            margin: auto;
+            height: 29%;
+            background-image: url(resources/img/bottomBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 
+        ============ END DIV ACTIONS =================
+        */
+        /* 
+        ============ START DIV FOOTER =================
+        */
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#FLAGS_CONTAINER {
+            width: 100%;
+            float: bottom;
+            margin: auto;
+            margin-top: 10px;
+            height: 15%;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#FLAGS_CONTAINER>#DISPLAY_AVAILABLE_MODELS {
+            width: 23%;
+            float: right;
+            height: 76%;
+            margin: 0;
+            transform: translateY(10%);
+            background-image: url(resources/img/modelsBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 5%;
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#FLAGS_CONTAINER>#DISPLAY_AVAILABLE_MODELS>#CIRCLE_FLAG_ONE {
+            background-image: url(./resources/img/UKflag2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 0.75rem);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: -15px 2px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#FLAGS_CONTAINER>#DISPLAY_AVAILABLE_MODELS>#CIRCLE_FLAG_TWO {
+            background-image: url(./resources/img/FRflag.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 0.75rem);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: -15px 2px;
+        }
+
+        ._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#FLAGS_CONTAINER>#DISPLAY_AVAILABLE_MODELS>#CIRCLE_FLAG_THREE {
+            background-image: url(./resources/img/eye.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 0.75rem);
+            background-color: whitesmoke;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: -15px 2px;
+
+        }
+
+        /* 
+        ============ END DIV FOOTER =================
+        */
+
+        /**
+        * ! Concerning the background images, if they are too small.
+        * ! it causes a blurry unwanted effect. 
+        * ! Much more larger images/icons would fit better the divs and fix
+        * ! the blur.
+        */
+
+        /*
+        ============ HTML ============
+        */
+    </style>
+</head>
+
+<body>
+    <section class="_00_HOME_section">
+        <div id="HOME_SCREEN" class="backgroundImg">
+            <div id="DISPLAY_HEADER">
+                <div id="logos">
+                    <img id="DISPLAY_NEDAP_LOGO" src="./resources/img/LogoNedap.png" alt="LOGO NEDAP" />
+                    <img id="DISPLAY_CUSTOMER_LOGO" src="./resources/img/vbcLogo.png" alt="LOGO NEDAP" />
+                </div>
+                <div id="DISPLAY_PRIMARY_INFO" class="PRIMARY_INFO">
+                    <div id="WELCOME_TEXT">
+                        Bienvenue sur notre automate de prêt et retour en libre-service
+                    </div>
+                    <!-- To avoid the creation of two new divs, i did the text placement using "&nbsp" which equals to a press on spacebar.  -->
+                    <div id="PRIMARY_INFO_TEXT">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        Veuillez cliquez avec votre doight sur le choix désiré.<br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSi vous rencontrez des difficultés, notre
+                        équipe est à votre entière disposition, avec le bouton d'appel à l'aide d'un agent.
+                    </div>
+                </div>
+            </div>
+
+            <div id="CONTAINER_APP">
+                <div id="CONTAINER_SECONDARY_HELP">
+                    <div id="CONTAINER_SECONDARY">
+                        <div id="DISPLAY_SECONDARY_INFO">
+                            <div id="SECONDARY_INFO_TITLE">
+                                Votre bibliothèque
+                            </div>
+                            <div id="SECONDARY_INFO_TEXT">
+                                Votre bibliothèque est ouverte de
+                                telle à telle heure du lundi au samedi. <br><br> Plus d'informations sur notre site
+                                blabla.fr
+                            </div>
+                        </div>
+                        <div id="DISPL_HELPME">
+                            <div id="HELPME_TEXT">
+                                <br>Appelez<br>
+                                un agent
+                            </div>
+                        </div>
+                        <div id="DISPL_PREVIOUS">
+                            <div id="DISPL_PREVIOUS_TEXT">
+                                Retour - page<br>précédente
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="DISPLAY_ACTIONS_CONTAINER">
+                    <div id="DISPLAY_ACTIONS">
+                        <div id="ACTIONS">
+                            <div id="DISPLAY_SMARTPHONE">
+                                <div id="LABEL_BT_SMARTPHONE">Scannez
+                                </div>
+                                <div id="BT_SMARTPHONE_TEXT">
+                                    ce QR Code
+                                </div>
+                            </div>
+                            <div id="DISPLAY_CARNET">
+                                <div id="LABEL_BT_CARNET">Saisie manuelle
+                                </div>
+                                <div id="CARNET_BTN_TEXT">de votre numéro d'adhérent
+                                </div>
+                            </div>
+                            <div id="DISPLAY_AIDEINTERACTIF_INFO">
+                                <div id="LABEL_BT_AIDEINTERACTIF">Besoin d'aide ?</div>
+                                <div id="LABEL_BT_AIDEINTERACTIF_TEXT">Regardez notre vidéo interactive</div>
+                            </div>
+
+                        </div>
+                        <div id="BOTTOM_BG">
+                        </div>
+                        <div id="FLAGS_CONTAINER">
+                            <div id="DISPLAY_AVAILABLE_MODELS">
+                                <div id="CIRCLE_FLAG_ONE">
+                                </div>
+                                <div id="CIRCLE_FLAG_TWO">
+                                </div>
+                                <div id="CIRCLE_FLAG_THREE">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+    </script>
+</body>
+
+</html>
