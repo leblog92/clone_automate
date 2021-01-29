@@ -1,0 +1,2924 @@
+._01_DISP_HELPME {
+    width: 160px;
+    height: 149px;
+    background-image: url("https://leblog92.github.io/automate/postitaide.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: medium; 
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 55%;
+    padding-top: 10%;
+    font-family: Objectivity-Regular;
+    /*transform:translateY(-10px);*/
+}
+._01_HOME_section {
+            position: relative;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+}
+._08_BACKGROUND .REFUSED_ITEM{color:red !important}
+._08_BACKGROUND .ACCEPTED_ITEM { color:green}
+._01_BACKGROUND {
+    background-image: url("https://leblog92.github.io/automate/concrete.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+._01_DISPLAY_WELCOME_TEXT
+{
+            font-size: xx-large;
+            font-family: Objectivity-Regular;
+            display: flex;
+            justify-content: center;
+            margin-left: 5px;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+        }
+._01_PRIMARY_INFO_TEXT {
+    width: 100%;
+    float: top;
+    height: 50%;
+    text-align:center;
+    /*justify-content: center;
+    align-items: center;*/
+    font-size: larger;
+    font-family: Objectivity-Regular;
+    text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._01_DISPLAY_NEDAP_LOGO {
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._01_DISPLAY_HEADER {
+    width: 100%;
+    height: 32%;
+    background-image: url("https://leblog92.github.io/automate/header-BG.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+._08_BACKGROUND .PENDING_ITEM { color:orange}
+._08_BACKGROUND .ACCEPTED_ITEM_ALERT_ANTIVOL{ color:yellowgreen}
+._08_BACKGROUND .ACCEPTED_ITEM_ALERT_MESSAGE { color:springgreen}
+._04_BACKGROUND .ACCEPTED_ITEM { color:green}
+._04_BACKGROUND .ACCEPTED_ITEM_ALERT_ANTIVOL{ color:yellowgreen}
+._04_BACKGROUND .ACCEPTED_ITEM_ALERT_MESSAGE { color:springgreen}
+._04_BACKGROUND .REFUSED_ITEM{
+color:red !important;
+background-image: url(../../1_/img/Scotchpretrefuse.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+._01_SECONDARY_INFO_TITLE {
+    line-height: 50px;
+    padding-top: 6%;
+    font-size: xx-large;
+    font-family: Objectivity-Regular;
+}
+._04_BACKGROUND .PENDING_ITEM{ color:orange}
+._01_SECONDARY_INFO_TEXT {
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    padding-top: 15%;
+    font-size: large;
+    font-family: Objectivity-Regular;
+    line-height: 35px; 
+}
+._08_BACKGROUND .ALERT_ANTIVOL{ color:violet}
+._01_DISPLAY_QR {
+display:none;
+width: 19%;
+    float: top;
+    height: 100%;
+    margin-top: 5%;
+    background-image: url(../../1_/img/smartphone.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+._04_BACKGROUND .ALERT_ANTIVOL{ color:violet}
+._01_LABEL_QR {
+display:none;
+    padding-top: 20px;
+    
+    width: 64%;
+    font-family: Objectivity-Regular;
+    margin: 36px;
+}
+._04_Status {
+  border: solid black;
+  padding: 5px;
+  font-family: objectivity-black;
+  width: 90px;
+  height: 50px;
+  text-align: center;
+}
+
+._04_identifiant {
+  padding: 5px;
+  font-family: objectivity-black;
+  font-size: 10px;
+  letter-spacing: 0.5;
+  border: solid black;
+  width: 150px;
+  text-align: center;
+}
+
+.Banners {
+  background-image: url(../../1_/img/stabilojaune.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+._04_titre {
+  border: solid black;
+  padding: 5px;
+  font-family: objectivity-black;
+  width: 250px;
+  text-align: center;
+}
+
+._04_RetournDate {
+  border: solid black;
+  padding: 5px;
+  font-family: objectivity-black;
+  width: 152px;
+  text-align: center;
+}
+
+#nextItemTable {
+  width: 35vw;
+}
+._01_IMAGE_QR 
+{ width: 65%;
+display:none;
+  transform: translateX(2em);
+}
+._08_DISPLAY_BARCODE {
+  font-family: objectivity-black;
+  padding: 20px;
+  border: none;
+  width: 150px;
+  text-align: center;
+}
+
+._08_DISPLAY_TITLE {
+  padding: 20px 130px;
+  font-family: objectivity-black;
+  border: none;
+  width: 400px;
+  text-align: center;
+}
+
+._08_Status {
+  border: solid black;
+  padding: 20px 32px;
+  font-family: objectivity-black;
+  text-align: center;
+}
+
+._08_identifiant {
+  padding: 20px 20px;
+  font-family: objectivity-black;
+  font-size: 10px;
+  letter-spacing: 0.5;
+  border: solid black;
+  width: 150px;
+  text-align: center;
+}
+
+._08_titre {
+  border: solid black;
+  padding: 20px 20px;
+  font-family: objectivity-black;
+  width: 400px;
+  text-align: center;
+}
+
+._08_RetournDate {
+  border: solid black;
+  padding: 20px 20px;
+  font-family: objectivity-black;
+}
+
+#pretsTable {
+  transform: translateX(15%);
+}
+._01_DISPLAY_KBD {
+width: 325px;    
+height: 334px;
+    transform:translate(400px);
+    background-image: url("https://leblog92.github.io/automate/bclavier.png");
+    background-size: 325px 334px;
+    background-repeat: no-repeat;
+    display: flex;
+    /*margin-top: -11%;*/
+    position:fixed;
+    justify-content: center;
+    /*flex-direction: column;*/
+    filter: drop-shadow(2px 4px 6px black);
+}
+._09_DISPLAY_MEDIA_TYPE {
+  font-family: objectivity-black;
+  padding: 5px;
+  border: solid;
+  text-align: center;
+}
+.DISPLAY_RENEW_BTN {
+  font-family: objectivity-black;
+  width: 100px;
+  text-align: center;
+}
+._09_DISPLAY_BARCODE {
+  font-family: objectivity-black;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  margin: auto;
+}
+._09_Media {
+  font-family: objectivity-black;
+  padding: 5px;
+  border: solid;
+  text-align: center;
+}
+
+._09_DISPLAY_TITLE {
+  font-family: objectivity-black;
+  padding: 20px;
+  width: 350px;
+  height: 60px;
+  text-align: center;
+}
+
+._09_DISPLAY_RETURN_DATE {
+  font-family: objectivity-black;
+  width: 150px;
+  text-align: center;
+}
+
+._09_Status {
+  border: solid black;
+  padding: 5px;
+  font-family: objectivity-black;
+  text-align: center;
+}
+
+._09_identifiant {
+  padding: 5px;
+  font-family: objectivity-black;
+  padding: 5px;
+  letter-spacing: 0.5;
+  border: solid black;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+}
+
+._09_titre {
+  border: solid black;
+  padding: 5px;
+  font-family: objectivity-black;
+  width: 350px;
+  text-align: center;
+}
+
+._09_RetournDate {
+  border: solid black;
+  padding: 20px 20px;
+  font-family: objectivity-black;
+  width: 150px;
+  text-align: center;
+}
+
+._09_Prolonger {
+  font-family: objectivity-black;
+  padding: 20px 20px;
+  border: none;
+  text-align: center;
+}
+
+#accountTable {
+}
+._09_renew {
+  font-family: objectivity-black;
+  padding: 5px;
+  border: none;
+  border: solid black;
+  width: 100px;
+}
+._09_DOC_LATE_ROW {
+  color: red;
+}
+._01_LABEL_KBD {
+    width: 75%;
+    font-family: Objectivity-Regular;
+    padding-bottom: 18.5em;
+color:white;
+padding-top:20px;
+}
+.EMAIL_OK{
+    display: block;
+    border: none;
+    width: 447px;
+    height: 50px;
+    outline: none !important;
+    background-image: url(../../1_/img/touchesaisissez.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    padding: 6px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+        box-shadow: 0 0 5pt 2pt #3db947;
+}
+._01_DISPLAY_GLOBAL_HELP
+{     
+      opacity: 1;
+}
+.SEND_READY{
+   display: block;
+    width: 305px;
+    height: 44px;
+    border: none;
+    background-color: #A3CDDF;
+    border-bottom: 4px solid #40849F;
+    border-radius: 4px;
+    outline: none !important;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+        box-shadow: 0 0 5pt 2pt #3db947;
+}
+._01_GLOBAL_HELP_TEXT {
+    /*background-image: url("https://leblog92.github.io/automate/carte.png");
+    background-size: cover;
+    transform: translate3d(-440px,10px,0px);
+    width: 325px;
+    height: auto;
+    padding: 3em;
+    margin-left: -2em;*/
+    /*transform: translateY(4em);
+    margin: 0em 0em;
+    margin: 0em; */
+    transform: translate(-800px;20px);
+    width: 100%;
+    float: top;
+    height: 334px;
+    margin-top: 4%;
+    font-family: Objectivity-Regular;
+    background-image: url("https://leblog92.github.io/automate/carte.png");
+    background-position: center;
+    filter: drop-shadow(2px 4px 6px black);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+}
+.EMAIL_ERROR{
+    display: block;
+    border: none;
+    width: 447px;
+    height: 50px;
+    outline: none !important;
+    background-image: url(../../1_/img/touchesaisissez.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    padding: 6px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+    box-shadow: 0 0 5pt 2pt #a94242;
+}
+.SEND_ERROR{
+    display: block;
+    width: 305px;
+    height: 44px;
+    border: none;
+    background-color: #A3CDDF;
+    border-bottom: 4px solid #40849F;
+    border-radius: 4px;
+    outline: none !important;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+     box-shadow: 0 0 5pt 2pt #a94242;
+}
+._01_DISPLAY_RETURN_HOME {
+    width: 170px;
+    height: 149px;
+    background-image: url("https://leblog92.github.io/automate/postitretour.png");
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    /*flex-direction: column-reverse;*/
+    justify-content: center;
+    margin-top: 20%;
+    padding-right: 3%;
+    /*margin: -141px 177px;*/
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, .4));
+    position:fixed;top:50px;left:0;
+}
+._01_RETURN_HOME_TITLE {
+font-family: Objectivity-Regular;
+font-size: 16px;
+}
+._01_RETURN_HOME_TEXT {
+  font-family: Objectivity-Regular;
+  font-size: medium;
+  padding-top: 30px;
+}
+._01_HELPME_TEXT {
+ padding-top: 15px;
+}
+._00_DISPLAY_DECONNEXION
+{width: 150px;
+    height: 150px;
+    visibility: hidden;
+    /* background-image: url(../../img/postitretour.png); */
+    background-image: url(../../1_/img/x-button.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    transform: translateY(15em);
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    /* margin-top: 23%; */
+    /* padding-right: 3%; */
+    font-family: Objectivity-Regular;
+    margin: -141px 189px;
+    filter: drop-shadow(2px 4px 6px black);  
+}
+._01_DISPLAY_AVAILABLE_MODELS {
+      width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(112px);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    
+}
+
+._01_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._01_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._01_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._01_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._08_DISP_REFUSED_ITEM_ALERT {
+
+    background-image: url(../../1_/img/Postitfermer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+    transform: translateY(367px);
+}
+
+.toast {
+-ms-flex-preferred-size: 350px;
+    /* flex-basis: 350px; */
+    /* max-width: 350px; */
+    font-size: .875rem;
+    background-color: rgba(0,0,0,.0); 
+    /* background-clip: padding-box; */
+     border: 0px solid rgba(0,0,0,.0); 
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.0); 
+  
+    border-radius: .25rem;
+
+}
+._04_DISP_REFUSED_ITEM_ALERT {
+    background-image: url(../../1_/img/Postitfermer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+    transform: translateY(0px);
+}
+
+.toast {
+
+-ms-flex-preferred-size: 350px;
+    /* flex-basis: 350px; */
+    /* max-width: 350px; */
+    font-size: .875rem;
+    background-color: rgba(0,0,0,.0); 
+    /* background-clip: padding-box; */
+     border: 0px solid rgba(0,0,0,.0); 
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.0); 
+  
+    border-radius: .25rem;
+}
+._02_HOME_section {
+ position: relative;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+}
+._02_BACKGROUND {
+            
+                
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+._02_DISPLAY_HEADER {
+          width: 36%;
+    height: 30%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='840' height='340'%3E%3Crect x='0' y='120' width='840' height='160' fill='linen' stroke='floralwhite' stroke-width='2'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: translateX(40em);
+
+}
+._02_DISPLAY_NEDAP_LOGO {
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._02_PRIMARY_INFO_TEXT {
+          width: 100%;
+            float: top;
+            height: 45%;
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            font-family: Objectivity-Regular;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+            padding-top: 19px;
+}
+._02_WELCOME_TEXT {
+    font-size: large;
+            font-family: Objectivity-Regular;
+            display: flex;
+            justify-content: center;
+            margin-left: 5px;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._02_RETURN_HOME_TEXT {
+font-family: Objectivity-Regular;
+  font-size: medium;
+  padding-top: 30px; 
+}
+
+html,
+      body,
+      div,
+      span,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      img,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+
+._02_DISPLAY_RETURN_HOME {
+    width: 160px;
+    height: 140px;
+    background-image: url("https://leblog92.github.io/automate/postitretour.png");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-right: 3%;
+    margin: 5em 15em;
+    filter: drop-shadow(2px 4px 6px black);
+}
+._00_BACKGROUND {        
+    background-image: url(https://leblog92.github.io/automate/concrete.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+._02_RETURN_HOME_TITLE {
+font-family: Objectivity-Regular;
+      
+      font-size: 16px;
+}
+._00_DISPLAY_LOAN {
+transform: translate(100px);
+    width: 30%;
+    float: top;
+    height: 100%;
+    margin-top: 4%;
+    font-family: Objectivity-Regular;
+    background-image: url("https://leblog92.github.io/automate/emprunter2.png");
+    background-position: center;
+    filter: drop-shadow(2px 4px 6px black);
+    transition: all 0.5s;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+._00_DISPLAY_LOAN span {
+	z-index: 2;	
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+}
+._00_DISPLAY_LOAN::before {
+	content: '';
+	position: absolute;
+        
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_LOAN::after {
+	content: '';
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_LOAN:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+._00_DISPLAY_LOAN:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+._00_DISPLAY_LOAN::after{animation:rotate-center 15s ease-in-out infinite both}
+._00_DISPLAY_LOAN::before{animation:rotate-center 10s ease-in-out 2s both}
+
+@keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.virtual-keyboard {
+    
+    background: white;
+    font-family: Objectivity-Regular;
+    user-select: none;
+    white-space: nowrap;
+    border-radius: 0.3rem;
+    background-image: url(../../1_/img/supporttouchesclavier.png);
+    
+}
+._00_LABEL_BT_LOAN {
+    color:white;
+    font-weight: bold;
+    line-height: 50px;
+    padding-top: 5%;
+    font-size: xx-large;
+}
+.virtual-keyboard .key {
+        display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    margin: 0.2rem;
+    padding: 0.3rem 0.7rem;
+    line-height: 3.3rem;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid lightgrey;
+    border-radius: 0.3rem;
+    color: #dee2e6;
+    white-space: nowrap;
+    min-width: 4rem;
+}
+.IDENTIFIANT_TEXT {
+        margin: -3em 0em;
+    font-family: Objectivity-Black;
+    font-size: inherit;
+    /* background-color: red; */
+    line-height: inherit;
+    background-repeat: no-repeat;
+    background-image: url(../../1_/img/touchesaisissez.png);
+    background-size: cover;
+    /* border-radius: 0%; */
+    width: 29%;
+    height: 13%;
+    border-radius: 1em;
+    transform: translateX(13em);
+    padding-left: 10px;
+    transform: translateX(-5em);
+}
+._00_HOME_section {
+            position: relative;
+            top: 0;
+            left: 0;
+            font-weight: bold;
+}
+._02_VALIDER_TEXT {
+          
+          margin: 0em 12em;
+    font-family: Objectivity-Regular;
+    font-size: x-large;
+    /* background-color: red; */
+    line-height: inherit;
+    background-repeat: no-repeat;
+    background-image: url(../../1_/img/toucheenvoyer.png);
+    background-size: cover;
+    /* border-radius: 0%; */
+    width: 29%;
+    height: 13%;
+    border-radius: 1em;
+    transform: translateY(-16em);
+    padding-left: 5em;
+    padding-top: 1em;
+}
+
+._02_VALIDER_TEXT:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(-16em);
+}
+._00_PRIMARY_INFO_TEXT {
+    width: 100%;
+    float: top;
+    height: 50%;
+    text-align:center;
+    line-height: 65px;
+<!--
+    display: flex;
+    justify-content: center;
+-->
+    align-items: center;
+    font-size: x-large;
+    font-family: Objectivity-Regular;
+    text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._02_CRAYONS_DISPLAY {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../1_/img/crayons.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-30em);
+    margin: 0em 46em;
+opacity:0;
+}
+._00_DISPLAY_HEADER {
+    width: 100%;
+    height: 32%;
+    background-image: url(https://leblog92.github.io/automate/header-BG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+._00_DISPLAY_NEDAP_LOGO {
+	transform: translateY(40px);
+
+
+
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._00_DISPLAY_CUSTOMER_LOGO {
+            opacity: 1;
+}
+._00_DISPLAY_RETURN {
+    width: 30%;
+    float: top;
+    height: 100%;
+    background-image: url("https://leblog92.github.io/automate/postitretour.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    margin-top: 4.2%;
+    justify-content: center;
+    flex-direction: column;
+    filter: drop-shadow(2px 4px 6px black);
+    transition: all 0.3s;
+    position: relative;
+}
+    
+._00_DISPLAY_RETURN span {
+	z-index: 2;	
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+}
+._00_DISPLAY_RETURN::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_RETURN::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_RETURN:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+._00_DISPLAY_RETURN:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+._00_DISPLAY_RETURN::after{animation:rotate-center 15s ease-in-out 2s infinite both}
+._00_DISPLAY_RETURN::before{animation:rotate-center 10s ease-in-out 4s  both}
+
+@keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+._00_LABEL_BT_RETURN {
+    font-weight: bold;
+    margin: 30px;
+    font-size: xx-large;
+    margin-left: 48px;
+    margin-top: -5.1em;
+    }
+._00_DISPLAY_PATRON_INFO {
+transform: translate(-100px);
+            width: 30%;
+            float: top;
+            height: 100%;
+            background-image: url("https://leblog92.github.io/automate/consulter2.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            margin-top: 4%;
+            font-size: x-large;
+            font-family: Objectivity-Regular;
+            flex-direction: column;
+            filter: drop-shadow(2px 4px 6px black);
+            transition: all 0.5s;
+            position: relative;
+}
+
+._00_DISPLAY_PATRON_INFO span {
+padding-right:100px;
+	z-index: 2;	
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+}
+._00_DISPLAY_PATRON_INFO::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_PATRON_INFO::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+._00_DISPLAY_PATRON_INFO:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+._00_DISPLAY_PATRON_INFO:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+._00_DISPLAY_PATRON_INFO::after{animation:rotate-center 15s ease-in-out 4s  both}
+._00_DISPLAY_PATRON_INFO::before{animation:rotate-center 10s ease-in-out 6s infinite both}
+
+@keyframes rotate-center{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 1000;
+
+  }
+._00_LABEL_BT_PATRONINFO {
+    color:white;
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 27px 32px;
+    width: 82%;
+    line-height: 25px;
+}
+#modal-content {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    left: 7.4%;
+    margin: -120px 0 0 -160px;
+    padding: 10px;
+    position: absolute;
+    top: 20%;
+    z-index: 1000;
+  }
+._00_TEXT_BT_LOAN {
+    width:100%;
+    padding-top: 5%;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    color:#fff;
+}
+#modal-background.active,
+  #modal-content.active {
+    display: block;
+  }
+._00_TEXT_BT_RETURN {
+                width: 76%;
+    height: 37%;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin: -39px;
+    margin-left: 9px;
+        }
+._00_DISPLAY_WELCOME_TEXT {
+    font-size: xx-large;
+    font-family: Objectivity-Regular;
+    display: flex;
+    justify-content: center;
+    margin: -0.7em;
+    text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._00_TEXT_BT_PATRONINFO {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    padding-top: 5%;
+    color:#fff;
+}
+._09_BACKGROUND {
+    background-image:url("https://leblog92.github.io/automate/concrete.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+._09_DISPLAY_HEADER {
+    width: 100%;
+    height: 346px;
+    background-image: url("https://leblog92.github.io/automate/header-BG.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    line-height: 90px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 43px 78px;
+}
+._03_BACKGROUND {
+    background-image: url("https://leblog92.github.io/automate/concrete.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+._03_DISPLAY_HEADER {
+    
+  width: 100%;
+    height: 32%;
+    background-image: url("https://leblog92.github.io/automate/header-BG.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+._03_DISPLAY_NEDAP_LOGO {
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._03_WELCOME_TEXT {
+font-size: xx-large;
+            font-family: Objectivity-Regular;
+            display: flex;
+            justify-content: center;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._03_PRIMARY_INFO_TEXT {
+ width: 100%;
+            float: top;
+            height: 50%;
+            display: flex;
+    margin-left: 0.5%;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+            font-family: Objectivity-Regular;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._03_SECONDARY_INFO_TITLE {
+ line-height: 50px;
+    padding-top: 6%;
+    font-size: xx-large;
+    font-family: Objectivity-Regular;
+}
+._00_PATRON_NAME {
+        margin: -1em;
+    transform: translateY(8em);
+    margin-left: 9em;
+    font-family: Objectivity-Black;
+    visibility: hidden;
+}
+._03_SECONDARY_INFO_TEXT {
+ margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    padding-top: 15%;
+    font-size: large;
+    font-family: Objectivity-Regular;
+    line-height: 35px;  
+}
+#_00_HOME{}
+._03_DISP_HELPME {
+width: 150px;
+    height: 140px;
+    background-image: url(../../1_/img/infoBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: large; 
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 40%;
+   padding-top: 10%;
+   font-family: Objectivity-Regular;
+}
+#_00_HOME{}
+._03_DISPLAY_RETURN_HOME {
+width: 160px;
+    transform: translateY(15em);
+    height: 140px;
+    background-image: url(../../1_/img/postitretour.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 20%;
+    padding-right: 3%;
+    margin: -141px 177px;
+    filter: drop-shadow(2px 4px 6px black); 
+}
+#_00_HOME{}
+._03_RETURN_HOME_TITLE {
+font-family: Objectivity-Regular;
+font-size: 16px;
+    padding: 10px;
+}
+._03_RETURN_HOME_TEXT {
+font-family: Objectivity-Regular;
+  font-size: medium;
+  padding-top: 30px; 
+}
+._03_DISPLAY_AVAILABLE_MODELS {
+      width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(112px);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    
+}
+
+._03_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._03_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._03_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._03_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._03_DISP_PATRON_NAME {
+    background-image: url("https://leblog92.github.io/automate/comptelecteur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* text-align: center; */
+    display: flex;
+    width: 160px;
+    height: 172px;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 4%;
+    font-family: Objectivity-Regular;
+}
+._03_DISP_PATRON_INFO_MENU {
+    background-image: url(../../1_/img/postitenligne.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 150px;
+    height: 150px;
+        padding-left: 11.3%;
+    padding-top: 2.5em;
+    line-height: -1em;
+    /* transform: translateY(2%); */
+    /* background-position: left; */
+    /* position: relative; */
+    font-family: objectivity-regular;
+}
+._03_DISP_PATRON_INFOADH {
+        background-image: url(../../1_/img/calepin.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* display: flex; */
+    width: 17em;
+    font-family: objectivity-regular;
+    padding-top: 10%;
+    padding-left: 1%;
+    height: 24em;
+    /* width: 22%; */
+    line-height: 3em;
+    transform: translateY(-1em);
+}
+._03_DISPLAY_INTEGRATED_HELP {
+     background-image: url(../../1_/img/tablettetactile1.png);
+    background-size: cover;
+    width: 25em;
+    height: 17em;
+    transform: translateY(5em);
+    /* margin: 0em 0em; */
+    padding: 3em;
+    /* margin: 0em; */
+    margin-left: -2em;
+}
+._09_REFUSED_ITEM_CLOSE_TEXT {
+    transform: translateY(125px);
+
+}
+._09_DISP_REFUSED_ITEM_ALERT {
+
+
+background-image: url(../../1_/img/Postitfermer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+    transform: translateY(367px);
+
+}
+._04_BACKGROUND {
+background-image: url("https://leblog92.github.io/automate/concrete.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+width: 100%;
+    height: 100%;
+    overflow: hidden;
+position: fixed;
+}
+._04_DISPLAY_HEADER {
+width: 100%;
+    height: 32%;
+    background-image: url(../../1_/img/upperBg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+._04_DISPLAY_NEDAP_LOGO {
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._04_WELCOME_TEXT {
+font-size: xx-large;
+            font-family: Objectivity-Regular;
+            display: flex;
+            justify-content: center;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._04_PRIMARY_INFO_TEXT {
+  width: 100%;
+            float: top;
+            height: 50%;
+            display: flex;
+    margin-left: 0.5%;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-family: Objectivity-Regular;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._04_SECONDARY_INFO_TITLE {
+ line-height: 50px;
+    padding-top: 6%;
+    font-size: xx-large;
+    font-family: Objectivity-Regular;
+}
+._04_SECONDARY_INFO_TEXT {
+ width: 100%;
+            float: top;
+            letter-spacing: 2px;
+            height: 50%;
+            display: flex;
+    margin-left: 0.5%;
+            justify-content: center;
+            align-items: center;
+line-height: 60px;
+            font-size: larger;
+            padding-right: 10px;
+            font-family: Objectivity-Regular;
+
+}
+._04_DISP_HELPME {
+width: 150px;
+    height: 140px;
+    background-image: url(../../1_/img/infoBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: large; 
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 45%;
+   padding-top: 10%;
+   font-family: Objectivity-Regular;
+}
+._04_DISPLAY_RETURN_HOME {
+    width: 160px;
+    height: 140px;
+    transform: translateY(15em);
+    background-image: url(../../1_/img/postitretour.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 20%;
+    padding-right: 3%;
+    padding-top: 11%;
+    font-family: Objectivity-Regular;
+    margin: -141px 177px;
+    filter: drop-shadow(2px 4px 6px black); 
+}
+._04_DISP_PATRON_NAME {
+        background-image: url(../../1_/img/comptelecteur.png);
+font-family: objectivity-regular;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* text-align: center; */
+    display: flex;
+    width: 160px;
+    height: 172px;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 8%;
+    transform: translateX(13em);
+    filter: drop-shadow(2px 4px 6px black);
+}
+._04_DISPLAY_AVAILABLE_MODELS {
+width: 22%;
+    float: right;
+    height: 140%;
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    transform: translateY(-30px);
+}
+
+
+._04_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._04_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._04_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._04_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER {
+            width: 64%;
+            float: right;
+            height: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS {
+            width: 90%;
+            height: 90%;
+        }
+._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#ACTIONS {
+            width: 85%;
+            float: top;
+            height: 65%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+._04_DISPLAY_MEDIA_TYPE {
+
+    border: solid black;
+    padding: 20px 20px;
+    font-family: objectivity-black;
+}
+._00_HOME_section>.backgroundImg>#CONTAINER_APP>#DISPLAY_ACTIONS_CONTAINER>#DISPLAY_ACTIONS>#BOTTOM_BG {
+            width: 100%;
+            float: bottom;
+            margin: auto;
+            height: 29%;
+            background-image: url(../../1_/img/bottomBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+._04_DISPLAY_STATUS {
+  font-family: objectivity-black;
+  padding: 20px 20px;
+  border: none;
+  width: 90px;
+  text-align: center;
+}
+._04_DISPLAY_BARCODE {
+  font-family: objectivity-black;
+  /* padding: 20px 20px; */
+  border: none;
+  width: 150px;
+  text-align: center;
+}
+._04_DISPLAY_TITLE {
+  /* padding: 20px; */
+  font-family: objectivity-black;
+  border: none;
+  width: 250px;
+  text-align: center;
+}
+._04_DISPLAY_RETURN_DATE {
+  font-family: objectivity-black;
+  /* padding: 20px 20px; */
+  border: none;
+  width: 152px;
+  text-align: center;
+}
+._04_DISPLAY_EXTRA {
+   
+}
+._04_END_LABEL {
+ z-index: 9999999999999999999999;
+       width: 10em;
+bottom: 0;
+position: absolute;
+        transform: translate3d(100px,80px,0px);
+    /* background-color: red; */
+        background-image: url(../../1_/img/Confirmez.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+font-family: objectivity-black;
+    height: 8em;
+    /* background-position-y: 0px; */
+    background-width: 60px;
+        margin: 0em 14em;
+    padding-top: 8px;
+}
+._04_DISPLAY_PEN {
+float: right;
+    background-image: url(../../1_/img/Stylo.png);
+    /* background-color: red; */
+    width: 19%;
+    height: 21%;
+    background-size: cover;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    filter: drop-shadow(17px 2px 7px black);
+}
+._04_DISP_PATRON_INFO
+{z-index: 1500;    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: -6%;
+    transform: translate3d(-116%, -53px, 0px);}
+/*._04_DISP_PATRON_INFO {
+width: 20%;
+    float: top;
+    height: 145%;
+    margin-top: -12%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-120px);
+    background-image: url(../../img/papierderriere.png);
+    filter: drop-shadow(2px 0px 8px black);
+}*/
+._08_REFUSED_ITEM_CLOSE_TEXT {
+    transform: translate3d(36px, 133px, 0px);
+    font-size: 80px;
+}
+
+
+._08_ACCEPTED_ITEM_CLOSE TEXT {    padding: 20px;
+    font-size: 80px;
+    transform: translateY(-19px);
+}
+._04_REFUSED_ITEM_CLOSE_TEXT {
+transform: translate3d(15px, 115px, 0px);
+}
+._04_DISP_UP {
+width: 40px;
+              Height: 40px;
+              border-radius: 50%;
+              /* background-color: red; */
+              background-size: cover;
+              background-image: url(../../1_/img/Boutonup.png);
+              float: right;
+}
+._04_DISP_ACCEPTED_ITEM_ALERT {
+   background-image: url(../../1_/img/Postitfermer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+}
+._04_DISP_DOWN {
+width: 40px;
+              Height: 40px;
+              border-radius: 50%;
+              /* background-color: red; */
+              background-size: cover;
+              background-image: url(../../1_/img/boutondown.png);
+              float: right;
+              transform: translate3d(40px,50px,1px);
+}
+._06_BACKGROUND {
+background-image: url("https://leblog92.github.io/automate/concrete.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+._06_DISPLAY_QRCODE_TICKET {
+    font-family: objectivity-regular;
+    background-image: url(../../1_/img/postitenligne.png);
+    background-size: cover;
+        width: 63%;
+    height: 140%;
+    background-repeat: no-repeat;
+    background-position-y: -1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* float: right; */
+    transform: translate3d(10em, 0em, 0em);
+}
+._08_DISP_ACCEPTED_ITEM_ALERT {
+background-image: url(../../1_/img/Postitfermer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+    transform: translateY(25em);
+
+}
+._06_QRCODE_TICKET_TEXT{            transform: translateY(-65%);
+    margin: -2px 21px;
+    /* margin-top: -1px; */
+    padding-left: 2em;
+    /* margin-top: 8em; */
+    /* margin-top: 7em; */
+    margin-top: 9em;}
+._06_QRCODE_VALUE {
+        transform: translate3d(6em,-7em,0em);
+    margin: 100px 0px;
+}
+._06_QRCODE_TICKET_LABEL{
+        transform: translate3d(1em,7em,0em);
+    font-family: objectivity-black;
+}
+._06_DISPLAY_PRINT_OPTION {
+        background-image: url(../../1_/img/postitreçu.png);
+    /* background-color: red; */
+    background-size: cover;
+        width: 45%;
+    background-position: center;
+    height: 100%;
+       transform: translate3d(5em, 2em, 0em);
+}
+._06_PRINT_OPTION_LABEL {
+font-family: objectivity-black;
+    transform: translate3d(0em,10em,0em);
+}
+._06_PRINT_OPTION_TEXT {
+       
+    content: url(../../1_/img/Iconereçu.png);
+    
+    /* background-color: red; */
+    width: 110px;
+    transform: translate3d(4em, 0em, 0em);
+}
+._06_DISPLAY_MAIL_OPTION {
+    background-image: url(../../1_/img/postitmail.png);
+    /* background-color: red; */
+    /* position: inherit; */
+    /* z-index: 2000; */
+    width: 455px;
+    /* width: 220px; */
+    /* background-position: center; */
+    height: 286px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(8em, 3em, 0em);
+}
+._06_MAIL_OPTION_TEXT {
+    
+    content: url(../../1_/img/Iconemail.png);
+    width: 100px;
+    transform: translate3d(8em,2em,0em);
+}
+._06_WELCOME_TEXT {
+font-size: xx-large;
+    font-family: objectivity-black;
+        transform: translate3d(35em, 5em, 0em);
+}
+._06_END_LABEL {
+    font-size: x-large;
+    font-family: objectivity-regular;
+    background-image: url(../../1_/img/boutonquitter.png);
+    background-size: cover;
+    width: 10%;
+    height: 86%;
+    /* background-position: center; */
+    /* background-position-y: -1px; */
+    padding: 16px 7px;
+    transform: translate3d(41em,-3em,0em);
+}
+._06_CHANGE_EMAIL_ADDR {
+width: 100%;
+    background-size: cover;
+    height: 33%;
+    transform: translate3d(1em, 10em, 0em);
+    background-image: url(../../1_/img/boutonchangermail.png);
+}
+._09_DISPLAY_NEDAP_LOGO{
+        width: 250px;
+        content: url('../../1_/img/LogoNedap.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        margin-top: -5px;
+opacity:0;
+}
+._08_BACKGROUND {
+    background-image: url("https://leblog92.github.io/automate/concrete.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -20px;
+        width: auto;
+    height: auto;
+}
+
+html {
+overflow:hidden;
+}
+._09_WELCOME_TEXT{
+        font-size: xx-large;
+        font-family: Objectivity-Regular;
+        margin-top: 25px;
+}
+._09_DISPLAY_PRIMARY_INFO{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+}
+._09_PRIMARY_INFO_TEXT{
+            font-size: 22px;
+            font-family: Objectivity-Regular;
+            margin-top: 27px;
+            line-height: 37px;
+}
+._08_DISPLAY_HEADER {
+width: 100%;
+    height: 32%;
+    background-image: url(../../1_/img/upperBg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+._09_DISPLAY_SECONDARY_INFO{
+    width: 379px;
+    height: 378px;
+    transform: translateX(4em);
+    background-image: url("https://leblog92.github.io/automate/left-BG.png");
+    background-position: center;
+    filter: drop-shadow(-8px 13px 3px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+._09_SECONDARY_INFO_TITLE{
+              font-size: xx-large;
+              font-family: Objectivity-Regular;
+              padding-top: 37px;
+              padding-bottom: 19px;
+}
+._00_SECONDARY_INFO_TITLE {   
+    line-height: 50px;
+    padding-top: 6%;
+    font-size: xx-large;
+    font-family: Objectivity-Regular; }
+._09_SECONDARY_INFO_TEXT{
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    padding-top: 15%;
+    font-size: large;
+    line-height: 35px;
+    font-family: Objectivity-Regular;
+}
+._09_DISP_HELPME{
+    background-image: url("https://leblog92.github.io/automate/postitaide.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 167px;
+    filter: drop-shadow(-8px 13px 3px);
+    height: 160px;
+    display: flex;
+    transform: translate3d(4em, -2em, 0em);
+    flex-direction: column;
+    padding-top: 70px;
+    align-items: center;
+}
+._00_SECONDARY_INFO_TEXT   { margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    padding-top: 15%;
+    font-size: large;
+line-height: 35px;
+    font-family: Objectivity-Regular;
+}
+._08_DISPLAY_NEDAP_LOGO {
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    content: url(../../1_/img/LogoNedap.png);
+    height: 15%;
+    filter: drop-shadow(6px 5px 5px grey);
+}
+._09_HELPME_TEXT{
+            font-family: Objectivity-Regular;
+    font-size: large;
+    padding-right: 15px;
+    padding-top: 6px;
+}
+._09_DISPLAY_RETURN_HOME{
+                background-image: url(../../1_/img/postitretour.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    transform: translateY(15em);
+    width: 167px;
+    height: 150px;
+    display: flex;
+    filter: drop-shadow(-8px 13px 3px);
+    flex-direction: column;
+    padding-top: 70px;
+    transform: translate3d(4em, -2em, 0em);
+    align-items: center;
+}
+._09_RETURN_HOME_TEXT{
+                  font-family: Objectivity-Regular;
+    font-size: large;
+    padding-right: 15px;
+}
+._08_WELCOME_TEXT {
+font-size: xx-large;
+            font-family: Objectivity-Regular;
+            display: flex;
+            justify-content: center;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._08_PRIMARY_INFO_TEXT {
+  width: 100%;
+            float: top;
+            height: 50%;
+            display: flex;
+    margin-left: 0.5%;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-family: Objectivity-Regular;
+text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+}
+._08_SECONDARY_INFO_TITLE {
+ line-height: 50px;
+    padding-top: 6%;
+    font-size: xx-large;
+    font-family: Objectivity-Regular;
+}
+._08_SECONDARY_INFO_TEXT {
+      /* margin-left: 5%; */
+    /* margin-right: 5%; */
+    align-items: center;
+    padding-top: 15%;
+    font-size: large;
+    padding-right: 5px;
+    line-height: 35px;
+    font-family: Objectivity-Regular;
+}
+._08_HELPME_TEXT {
+padding-top: 15px;
+}
+._08_DISP_HELPME {
+width: 150px;
+    height: 140px;
+    background-image: url(../../1_/img/infoBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: large; 
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+        margin-top: 50%;
+   padding-top: 10%;
+   font-family: Objectivity-Regular;
+}
+._08_DISPLAY_RETURN_HOME {
+ width: 160px;
+    height: 140px;
+    background-image: url(../../1_/img/postitretour.png);
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    transform: translateY(15em);
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 20%;
+    padding-right: 3%;
+    margin: -141px 177px;
+    filter: drop-shadow(2px 4px 6px black); 
+}
+._08_RETURN_HOME_TITLE {
+font-family: Objectivity-Regular;
+      padding-top: 40px;
+      font-size: 16px;
+}
+._00_DISP_HELPME {
+    width: 150px;
+    height: 150px;
+    background-image: url("https://leblog92.github.io/automate/postitaide.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: larger; 
+    
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 40%;
+}
+._08_DISPLAY_AVAILABLE_MODELS {
+             width: 22%;
+    float: right;
+    height: 22%;
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    /* transform: translateY(120px); */
+}
+/*
+._08_DISPLAY_AVAILABLE_MODELS {
+      width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(112px);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    
+}
+*/
+._08_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._08_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._08_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._08_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._00_DISPLAY_GLOBAL_HELP {
+    width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(100%);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+}
+/*._09_DISPLAY_AVAILABLE_MODELS{
+         width: 15%;
+    height: 109%;
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -25px;
+    margin-right: 120px;
+    display: flex;
+    padding-left: 17px;
+    justify-content: center;
+    filter: drop-shadow(-8px 13px 3px);
+    align-items: center;
+}
+*/
+._09_DISPLAY_AVAILABLE_MODELS {
+      width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(112px);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    
+}
+
+._09_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._09_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._09_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._09_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._00_GLOBAL_HELP_TITLE {
+    font-size: large;
+    margin: -31px 60px;
+}
+._09_DISP_PATRON_INFO{
+    width: 188px;
+    height: auto;
+    padding-top: 121px;
+    background-image: url("https://leblog92.github.io/automate/comptelecteur2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: -59px;
+    transform: translateX(11em);
+    /* display: flex;*/
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    filter: drop-shadow(-8px 13px 3px);
+}
+._00_GLOBAL_HELP_TEXT {
+    margin: 30px 33px;
+    font-size: medium;
+}
+._09_DISP_PATRON_NAME {
+    width: 188px;
+    height: auto;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(0deg);
+    font-family: objectivity-regular;
+    font-size: 19px;
+    padding: 17px 0px;
+    text-align: center;
+    padding-left: 29px;
+}
+._00_DISPLAY_AVAILABLE_MODELS {
+      width: 22%;
+    float: right;
+    height: 78%;
+    margin: 0;
+    transform: translateY(112px);
+    background-image: url(../../1_/img/modelsBG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 5%;
+    filter: drop-shadow(2px 4px 6px black);
+    
+}
+
+._00_1 {
+    background-image: url(../../1_/img/FRflag.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -15px 70px;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._00_1:hover    {box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+
+._00_1_1 {
+    background-image: url(../../1_/img/UKflag2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 0.75rem);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: -40px 8em;
+transition: 0.25s ease;
+border: 2px solid whitesmoke;
+}
+
+._00_1_1:hover 
+{box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);}
+._04_DISP_DOC_HOME {
+font-family: objectivity-regular;
+}
+._04_DISP_DOC_LATE {
+font-family: objectivity-regular;
+}
+._04_DISP_DOC_AVAILABLE {
+font-family: objectivity-regular;
+}
+._04_DISP_DOC_HOLD {
+font-family: objectivity-regular;
+}
+.CANCEL_BUTTON_LABEL {
+    border: 3px solid darkblue;
+
+}
+._04_DISPLAY_CANCEL_BUTTON {
+    border: solid black;
+    padding: 20px 20px;
+    font-family: objectivity-black;
+}
+._09_DISP_FLASH_PAGE{
+     width: 18em;
+    transform: translate3d(12em, -2em, 0em);
+    display: block;
+     background-image: url(../../1_/img/papierderrière.png);
+     background-position: 0 95%;
+     background-repeat: no-repeat;
+     
+     margin-top: 50px;
+     background-size: cover;
+     padding: 27px 25px 35px 45px;
+     
+     
+     justify-content: space-between;
+     align-items: center;
+     z-index:10;
+}
+._09_FLASH_PAGE_TITLE{
+         font-size: smaller;
+    font-family: Objectivity-regular;
+    font-weight: bold;
+    
+    padding-left: 50px;
+}
+._09_IMAGE_QR{
+         display: flex;
+    width: 80%;
+    transform: translate3d(13px,1em,0em);
+}
+
+._09_DISPLAY_GO_LOAN {
+transform: translate3d(205px,20px,0px);
+background-color: #3498db;
+  border-bottom: 5px solid #2980B9;
+      width: 8vw;
+    height: 4vh;
+}
+
+._09_GO_LOAN_TEXT {
+ font-family: objectivity-black;
+    /* width: 100%; */
+    /* height: 100%; */
+    text-align: center;
+}
+._09_DISP_DOC_HOME{
+                background-image: url(../../1_/img/Scotch.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 20px;
+                font-family: Objectivity-regular;
+                padding: 0 15px;
+}
+._09_DISP_DOC_LATE{
+background-image: url(../../1_/img/Scotch.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 20px;
+                font-family: Objectivity-regular;
+                padding: 0 15px;
+}
+._09_DISP_DOC_AVAILABLE{
+background-image: url(../../1_/img/Scotch.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 20px;
+                font-family: Objectivity-regular;
+                padding: 0 15px;
+}
+._09_DISP_DOC_HOLD{
+background-image: url(../../1_/img/Scotch.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 20px;
+                font-family: Objectivity-regular;
+                padding: 0 15px;
+}
+._08_DISPLAY_PEN {
+float: right;
+    background-image: url(../../1_/img/Stylo.png);
+    /* background-color: red; */
+    width: 19%;
+    height: 21%;
+    background-size: cover;
+    transform: translateX(-50%);
+    margin-top: 12px;
+    filter: drop-shadow(17px 2px 7px black);
+}
+._08_END_LABEL {
+    font-family: objectivity-regular;
+bottom: 0;
+    background-image: url(../../1_/img/scotchfin.png);
+    background-size: cover;
+    width: 150px;
+    height: 60px;
+    padding-top: 22px;
+    position: absolute;
+    padding-left: 20px;
+    transform: translate3d(18em, -1em, 0em);
+}
+._08_DISP_PATRON_NAME {
+background-image: url(../../1_/img/comptelecteur.png);
+font-family: objectivity-regular;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* text-align: center; */
+    display: flex;
+    width: 160px;
+    height: 172px;
+    justify-content: flex-end;
+position: absolute;
+transform: translate3D(50em,-10em,0em);
+bottom: 0;
+    flex-direction: column;
+    padding: 2%;
+    
+    filter: drop-shadow(2px 4px 6px black);
+}
+._08_DISP_UP {
+float: right;
+width: 40px;
+              Height: 40px;
+              border-radius: 50%;
+              /* background-color: red; */
+              background-size: cover;
+              background-image: url(../../1_/img/Boutonup.png);
+}
+._08_DISP_DOWN {
+float: right;
+width: 40px;
+              Height: 40px;
+              border-radius: 50%;
+              /* background-color: red; */
+              background-size: cover;
+              background-image: url(../../1_/img/boutondown.png);
+              transform: translate3d(40px,50px,1px);
+}
+._09_DISP_TABLE_NAVIGATION{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 60px;
+     margin-right: 13px;
+}
+._09_DISP_UP{
+      background-image: url(../../1_/img/Boutonup.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 45px;
+      height: 45px;
+      float: right;
+    margin-top: 20px;
+
+}
+._09_DISP_DOWN{
+     background-image: url(../../1_/img/boutondown.png);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     width: 45px;
+     float: right;
+     height: 45px;  
+     margin-top: 20px;
+
+}
+.loader {
+    position: fixed;
+    z-index: 99999 !important;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color:#29292e;
+    overflow: hidden;
+      
+    
+    
+  }
+
+
+.flip-walker {
+/*transform: translateX(10em);*/
+
+}
+._07_virtual-keyboard{
+    background-image: url(../../1_/img/supporttouchesclavier.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px 27px 25px 57px;
+    border-radius: 13px;
+}
+._07_virtual-keyboard .key{
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    margin: 0.2rem;
+    padding: 0.3rem 0.7rem;
+    line-height: 3.3rem;
+    cursor: pointer;
+    user-select: none;
+    background: #FEFFFF;
+    border: 1px solid #838787;
+    border-radius: 7px;
+    color: #9FA0A1;
+    white-space: nowrap;
+    min-width: 4rem;
+    box-shadow: 1px 1px 0px 0px rgba(131,135,135,1);
+}
+._01_VIDEO_INTERACTIVE {
+    width: 357px;
+    height: 243px;
+    transform: translate3d(-460px,-195px,0px);
+    display:none;
+}
+._03_VIDEO_INTERACTIVE {
+    width: 359px;
+    height: 243px;
+    transform: translate3d(-28px, -27px,0px);
+}
+._07_DISP_RETURN{
+    background-image: url(../../1_/img/postitretour.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 210px;
+    height: 184px;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 25px 0 6px;
+    align-items: center;
+    margin: 0 0 240px 30px;
+}
+._07_RETURN_TITLE{
+    font-size: 14px;
+    font-family: Objectivity-regular;
+    margin-top: 8px;
+}
+._07_RETURN_TEXT{
+    font-size: 19px;
+    font-family: Objectivity-regular;
+    margin-top: 25px;
+}
+.xTable {
+  display: table;
+  padding-right: 5px;
+  font-family: sans-serif;
+  z-index: 1000;
+}
+.xTableRow {
+  display: table-row;
+}
+.xTableHeading {
+  display: table-header-group;
+}
+.xTableBody {
+  display: table-row-group;
+}
+.xTableFoot {
+  display: table-footer-group;
+}
+.xTableCell,
+.xTableHead {
+  display: table-cell;
+}
+.xTable {
+  display: table;
+  width: 100%;
+}
+.xTableRow {
+  display: table-row;
+  border: solid 2px #41403e;
+}
+.xTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+}
+.xTableCell,
+.xTableHead {
+  display: table-cell;
+  padding: 3px 10px;
+  border: 1px solid #999999;
+  width: 20vw;
+}
+.xTableHeading {
+  display: table-header-group;
+  background-color: #ddd;
+  font-weight: bold;
+}
+.xTableFoot {
+  display: table-footer-group;
+  font-weight: bold;
+  background-color: #ddd;
+}
+.xTableBody {
+  display: table-row-group;
+}
+
+.xTableRow1 {
+  background-image: url(../../1_/img/stabilojaune.png);
+font-family: objectivity-regular;
+    font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: table-row;
+  letter-spacing: 2px;
+  border: solid 7px #41403e;
+}
+
+.xTableCell,
+.xTableHead .xTableFoot {
+  align-self: center;
+  background: transparent;
+  margin: 0 1rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  /*  color: #41403e; */ 
+  font-size: 1rem;
+  letter-spacing: 1px;
+  outline: none;
+
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.xTableCell1 {
+  background-image: url("../../1_/img/stabilobleu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table-cell;
+  padding: 3px 10px;
+  border: 1px solid #999999;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  text-align: center;
+}
+
+.xTableCell2 {
+  background-image: url("../../1_/img/stabilobleu.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table-cell;
+
+  border: 1px solid #999999;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  text-align: center;
+}
+
+.xTableHead {
+  text-align: center;
+  height: 30px;
+  border-top: none;
+  border-right: none;
+}
+
+.xTableRow3 {
+  background-image: url(../../1_/img/Scotchpretrefuse.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: table-row;
+  width: 100%;
+  height: 150px;
+  border: solid 4px #41403e;
+  z-index: 2000;
+  background-size: cover;
+  height: 99px;
+  line-height: 65px;
+  color: red;
+}
+
+.xTableCell3 {
+  background-image: url("../../1_/img/stabilorouge.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table-cell;
+  text-align: center;
+  border: 1px solid #999999;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.xTableCell4 {
+  background-image: url("../../1_/img/stabilovert.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: table-cell;
+  text-align: center;
+  border: 1px solid #999999;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.xTableCell, .xTableHead {
+width: 280px;
+}
+._07_DISPLAY_HEADER{
+    background-image: url(../../1_/img/bg_header_kbd.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 636px;
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 78px 30px 20px 20px;
+}
+._07_DISPLAY_NEDAP_LOGO{
+    width: 250px;
+    content: url(../../1_/img/LogoNedap.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+._07_DISPLAY_WELCOME_TEXT{
+    font-size: 19px;
+    font-family: Objectivity-regular;
+    margin-top: 30px;
+}
+.EMAIL_EMPTY{
+    display: block;
+    border: none;
+    width: 447px;
+    height: 50px;
+    outline: none !important;
+    background-image: url(../../1_/img/touchesaisissez.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    padding: 6px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+}
+.SEND_EMPRY{
+    display: block;
+    width: 305px;
+    height: 44px;
+    border: none;
+    background-color: #A3CDDF;
+    border-bottom: 4px solid #40849F;
+    border-radius: 4px;
+    outline: none !important;
+    font-size: 19px;
+    font-family: Objectivity-regular;
+}
+._08_DISPLAY_MEDIA_TYPE {
+ 
+}
+._00_DISPLAY_SECONDARY_INFO {
+/* width: 78%; */
+
+          width: 74%;
+
+          background-image: url(https://leblog92.github.io/automate/left-BG.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          filter: drop-shadow(-8px 13px 3px);
+          height: 65%;
+}
+._00_DISP_BOTTOM {
+width: 100%;
+              float: bottom;
+              height: 28%;
+              background-image: url(../../1_/img/bottomBG.png);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+}
+._01_DISP_BOTTOM {
+width: 100%;
+            float: bottom;
+            height: 28%;
+            background-image: url(../../1_/img/bottomBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+}
+._01_DISPLAY_SECONDARY_INFO {
+width: 74%;
+          background-image: url("https://leblog92.github.io/automate/left-BG.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          filter: drop-shadow(-8px 13px 3px);
+          height: 65%;
+}
+._03_DISPLAY_SECONDARY_INFO {
+/* width: 78%; */
+
+      width: 75%;
+
+      background-image: url(../../1_/img/leftBG.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      filter: drop-shadow(-8px 13px 3px);
+      height: 66%;
+}
+._03_DISP_BOTTOM {
+width: 100%;
+              float: bottom;
+              height: 28%;
+              background-image: url(../../1_/img/bottomBG.png);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+}
+._04_DISPLAY_SECONDARY_INFO {
+/* width: 78%; */
+
+          width: 74%;
+
+          background-image: url(../../1_/img/leftBG.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          filter: drop-shadow(-8px 13px 3px);
+          height: 65%;
+}
+._04_DISP_BOTTOM {
+width: 100%;
+            float: bottom;
+            height: 28%;
+            background-image: url(../../1_/img/bottomBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+}
+._04_DISP_BACKPAPER {
+width: 20%;
+              float: top;
+              height: 145%;
+              margin-top: -12%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              display: flex;
+              /* margin-left: 1em; */
+              /* margin-right: 5em; */
+              z-index: 500;
+
+              justify-content: center;
+              align-items: center;
+              transform: translateX(-255px);
+              background-image: url(../../1_/img/papierderrière.png);
+              filter: drop-shadow(2px 0px 8px black);
+}
+._04_DISP_NOTEPAD {
+background-image: url(../../1_/img/Calepin1.png);
+              position: relative;
+              padding-left: 20%;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 190%;
+              height: 137%;
+              z-index: 1500;
+              transform: translateX(-17%);
+              margin: -5em 0em;
+              filter: drop-shadow(2px 4px 6px black);
+}
+._08_DISPLAY_SECONDARY_INFO {
+width: 75%;
+
+          background-image: url(../../1_/img/leftBG.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          filter: drop-shadow(-8px 13px 3px);
+          height: 66%;
+}
+._08_DISP_NOTEPAD {
+background-image: url(../../1_/img/Calepin1.png);
+              position: relative;
+              padding-left: 7%;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 131%;
+              z-index: 1500;
+              transform: translateX(-10%);
+              margin: -75px 4em;
+              filter: drop-shadow(2px 4px 6px black);
+}
+._08_DISP_BOTTOM {
+ width: 100%;
+            float: bottom;
+            height: 28%;
+            background-image: url(../../1_/img/bottomBG.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateY(5%);
+            background-size: cover;
+}
+._09_DISP_NOTEPAD {
+background-image: url(../../1_/img/Calepin1.png);
+              background-position: 70px center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              padding-left: 153px;
+              height: 48%; 
+              /* display: flex; */
+              transform: translate3d(8em, 0em, 0em);
+              width: -1em;
+              width: 63em;
+              /* height: 28em; */
+              /* flex-direction: column; */
+              filter: drop-shadow(-8px 13px 3px);
+              justify-content: flex-start;
+              align-items: stretch;
+              position: relative;
+}
